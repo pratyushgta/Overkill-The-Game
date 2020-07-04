@@ -5,5 +5,4 @@ _*The next-gen, text-based open world thriller.*_
 
 **COMING SOON!**
 
->Powered by Overkill Engine.
->_*For more insights on the Overkill Engine, check out @BoltonB07/Overkill_Engine*_
+>Powered by Overkill Engine. _*For more insights on the Overkill Engine, check out @BoltonB07/Overkill_Engine*_
