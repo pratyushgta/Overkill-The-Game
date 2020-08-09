@@ -1,65 +1,102 @@
 package Overkill_Engine;
 /**
- * Write a description of class Print here.
+ * This class contains all methods regarding printing and outputting simple single line text and patterns.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author BoltonB07
+ * @version 0.0.0
  */
 public class Print
 {
-    public static void text(String s){
-        System.out.print(s);
+    public static void text(String text){ System.out.print(text.trim()); }
+    public static void text(boolean bool){
+        System.out.print(bool);
+    }
+    public static void text(int num){
+        System.out.print(num);
+    }
+    public static void text(char character){
+        System.out.print(character);
+    }
+    public static void text(double num){
+        System.out.print(num);
+    }
+    public static void text(float num){
+        System.out.print(num);
+    }
+    public static void text(long num){
+        System.out.print(num);
+    }
+    public static void textln(String text){
+        System.out.println(text.trim());
+    }
+    public static void textln(boolean bool){
+        System.out.println(bool);
+    }
+    public static void textln(int num){
+        System.out.println(num);
+    }
+    public static void textln(char character){
+        System.out.println(character);
+    }
+    public static void textln(double num){
+        System.out.println(num);
+    }
+    public static void textln(float num){
+        System.out.println(num);
+    }
+    public static void textln(long num){
+        System.out.println(num);
+    }
+    public static void textln(){
+        System.out.println();
+    }
+    public static void header(String headerText){
+        Print.textln();
+        Print.lineln("*",headerText.length());
+        Print.textln(headerText.toUpperCase().trim());
+        Print.lineln("*",headerText.length());
+        Print.textln();
+    }
+    public static void error(String error_message){
+
+        System.out.println("Error: "+error_message.trim());
     }
 
-    public static void textln(String s){
-        System.out.println(s);
+    public static void error(int error_code, String error_message){
+        System.out.println("Error "+error_code+": "+error_message.trim());
     }
 
-    public static void error(String s){
-        System.out.println("Error: "+s);
-    }
-
-    public static void systemError(int error_code, String error_message){
-        System.out.println("Error "+error_code+": "+error_message);
-    }
-
-    public static void line(String a, int length){
-        int numberOfTimesToPrintFull=length/a.length();
+    public static void line(String line, int length){
+        line=line.trim();
+        int numberOfTimesToPrintFull=length/line.length();
         for(int i=1;i<=numberOfTimesToPrintFull;i++){
-            text(a);
+            text(line);
         }
-        int numberOfTimesToPrintOne=length%a.length();
+        int numberOfTimesToPrintOne=length%line.length();
         for(int j=0; j<=numberOfTimesToPrintOne-1;j++){
-            text(Character.toString(a.charAt(j)));
+            text(Character.toString(line.charAt(j)));
         }
     }
-    public static void lineln(String a, int length){
-        int numberOfTimesToPrintFull=length/a.length();
-        for(int i=1;i<=numberOfTimesToPrintFull;i++){
-            text(a);
-        }
-        int numberOfTimesToPrintOne=length%a.length();
-        for(int j=0; j<=numberOfTimesToPrintOne-1;j++){
-            text(Character.toString(a.charAt(j)));
-        }
-        textln("");
+    public static void lineln(String line, int length){
+        line(line,length);
+        textln();
     }
-
-    public static void lineAndText(String a, int length, String text){
+    public static void line(String line, int length, String text){
+        line=line.trim();text=text.trim();
         if(length>text.length()){
-            int effectiveLength=length-text.length();  //a="--",length=6,text="abc",effectLengt=3
+            int effectiveLength=length-text.length();
             boolean ifOdd=false;
-            if(effectiveLength%2==1){   //ifOdd=true
+            if(effectiveLength%2==1){
                 ifOdd=true;
             }
             if(ifOdd){
-                line(a, (effectiveLength/2)+1);//works correctly HERE
+                line(line, (effectiveLength/2)+1);
             }
             else{
-                line(a, effectiveLength/2);
+                line(line, effectiveLength/2);
             }
-            text(text);//works correctly
-            line(a, effectiveLength/2);//Fucks up shit, 
+            text(text);
+            line(line, effectiveLength/2);
         }
         else if(length<text.length()){
             line(text,length);
@@ -68,28 +105,8 @@ public class Print
             text(text);
         }
     }
-    public static void lineAndTextln(String a, int length, String text){
-        if(length>text.length()){
-            int effectiveLength=length-text.length();  //a="--",length=6,text="abc",effectLengt=3
-            boolean ifOdd=false;
-            if(effectiveLength%2==1){   //ifOdd=true
-                ifOdd=true;
-            }
-            if(ifOdd){
-                line(a, (effectiveLength/2)+1);//works correctly HERE
-            }
-            else{
-                line(a, effectiveLength/2);
-            }
-            text(text);//works correctly
-            line(a, effectiveLength/2);//Fucks up shit, 
-        }
-        else if(length<text.length()){
-            line(text,length);
-        }
-        else{
-            text(text);
-        }
-        textln("");
+    public static void lineln(String line, int length, String text){
+        line(line,length,text);
+        textln();
     }
 }

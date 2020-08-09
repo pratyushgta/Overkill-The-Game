@@ -1,9 +1,9 @@
 package Overkill_Engine;
 /**
- * Write a description of class Scene here.
+ * This class contains methods regarding scenes and quickly generates scenes and options
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author BoltonB07
+ * @version 0.0.0
  */
 public class Scene
 {
@@ -12,23 +12,27 @@ public class Scene
     }
 
     public static void make(String currentLoc, String describeLoc, String choicePrompt, double money, boolean showMoney, double HP, boolean ShowHP){
+        Scene.clear();
         if(currentLoc!=null){
-            Print.textln("");
+            currentLoc=currentLoc.trim();
+            Print.textln();
             Print.lineln("*",currentLoc.length());
             Print.textln(currentLoc.toUpperCase());
             Print.lineln("*",currentLoc.length());
         }
         if(describeLoc!=null){
+            describeLoc=describeLoc.trim();
             Print.textln(describeLoc);
-            Print.textln("");
+            Print.textln();
         }
         if(choicePrompt!=null){
+            choicePrompt=choicePrompt.trim();
             Print.textln(choicePrompt);
-            Print.textln("");
+            Print.textln();
         }
         if(showMoney){
             Print.textln("You have $"+money);
-            Print.textln("");
+            Print.textln();
         }
         if(ShowHP){
             Print.textln("Your HP: "+HP);
@@ -36,7 +40,10 @@ public class Scene
     }
 
     public static void choice(String[] choices){
-        Print.textln("");
+        Print.textln();
+        for(int k=0;k<=choices.length-1;k++){
+            choices[k]=choices[k].trim();
+        }
         int longest=0, longestIndex=0;
         String longestOptionNumber;
         for(int j=0;j<=choices.length-1;j++){
@@ -51,6 +58,6 @@ public class Scene
             Print.textln((i+1)+": "+choices[i]);
         }
         Print.lineln("-",longest+longestOptionNumber.length()+2);
-        Print.textln("");
+        Print.textln();
     }
 }
