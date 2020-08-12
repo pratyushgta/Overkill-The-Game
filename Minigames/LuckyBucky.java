@@ -1,15 +1,15 @@
 package Minigames;
-
 import Overkill_Engine.*;
 import Backend.Stats;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 public class LuckyBucky {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
         Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false);
-        Thread.sleep(3500);
+        Thread.sleep(1000);
         Print.textln("Bucky:\nLook at how the turns have tabled!");
         Thread.sleep(1500);
         Print.textln("I now present to you a new game mode! Only available in OKTown.");
@@ -18,21 +18,25 @@ public class LuckyBucky {
         Thread.sleep(2000);
         Print.textln("Thank you for coming here! We hope to see you again soon!");
     }
+
     private static void options() throws IOException, InterruptedException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $1; Win: $500)"});
+        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500)"});
         Print.textln("Response:");
         int choice= Integer.parseInt(br.readLine());
         if(choice==1){
             Print.textln("Ah yes, I see my new challenge is quite popular!");
             Thread.sleep(2000);
+            Stats.money-=10;
             guessMyNumber();
         }
         else if(choice==2){
             Print.textln("Ah I see you wanna play the Original Lucky Bucky 1 out of 100 mode!");
             Thread.sleep(2200);
             Print.textln("So far only 1 person in my previous town has won this... that too on their first try!");
-            Thread.sleep(2750);
+            Thread.sleep(2000);
+            Stats.money-=100;
+            classic();
         }
         else{
             Print.textln("You... naughty, naughty bi... person!");
@@ -43,6 +47,7 @@ public class LuckyBucky {
             options();
         }
     }
+
     private static void guessMyNumber() throws InterruptedException, IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         Print.textln("Bucky:\nYOU!");
@@ -169,6 +174,95 @@ public class LuckyBucky {
             }
         }
     }
+
+    private static void classic() throws InterruptedException, IOException {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));       
+        System.out.println();
+        Print.textln("Bucky:\nYOU!");
+        Thread.sleep(1000);
+        Print.textln("...Yes you!");
+        Thread.sleep(1000);
+        Print.textln("...are the man of good times! You...are the reason the Original Lucky Bucky is still up and running...");
+        Thread.sleep(2000);
+        Print.textln("Honour thy soul for being such a good sport!");
+        Thread.sleep(3000);
+        Print.textln("You know the rules...if you suck, you die...ahum! ahum! Guess a number...");
+        Thread.sleep(2000);
+        Print.textln("Any number. YES! ANY NUMBER! Greater or lesser, bigger or smaller, perferct square or automorphic, happy number or sad ..");
+        Thread.sleep(3000);
+        Print.textln("No! It can't be your gf's phone number because your guess should be between 1 to 100.");
+        Thread.sleep(3000);
+        System.out.println();
+        Print.textln("Before the cops raid & beat the shit out of me for shooting your arse, tell me your guess...");
+        Thread.sleep(2000);
+        Print.textln("\nYou can say \"I want to make a final guess\" anytime to make the final guess!");
+        Thread.sleep(1400);
+        String str;
+        int turns=5;
+        Random rand = new Random();
+        while(turns>0){
+            int num=rand.nextInt(100);
+            System.out.println();
+            Print.textln("\nYou have "+turns+" turns remaining");
+            Thread.sleep(1500);
+            Print.textln("Make a guess or tell me if you wanna make a final guess!");
+            Print.textln("Response:");
+            str=br.readLine();
+            if(str.toLowerCase().contains("final")){
+                Thread.sleep(1500);
+                Print.textln("How very brave of you! Make your guess!");
+                str=br.readLine();
+                guess(str,num);
+                break;
+            }
+
+            if(Integer.parseInt(str)<=100)
+            {
+                if(Integer.parseInt(str)==num){
+                    int ch=rand.nextInt(3);
+                    if(ch==1){
+                        Print.textln("What!? Unbelievable! You won!");
+                    }
+                    else if(ch==2){ 
+                        Print.textln("No Wayy...! No wayyy..! You little ball of.. You guessed it correctly!");
+                    }
+                    else
+                    {
+                        Print.textln("You. Sir, yes You! Just guessed the number correctly!");
+                    }
+                    Stats.money+=500.0;
+                    turns--;
+                }
+                else
+                {
+                    int failch=rand.nextInt(3);
+                    if(failch==1){
+                        Print.textln("Better luck, next time. You loOoOose! Haha. The number was "+num);
+                    }
+                    else if(failch==2){ 
+                        Print.textln("Yay! you saved my money by not winning! Lucky number was "+num);
+                    }
+                    else
+                    {
+                        Print.textln("Hard Luck! The number was "+num);
+                    }
+                    Thread.sleep(1000);
+                    turns--;
+                }
+            }
+
+            else
+            {
+                Print.textln("You... do you understand english!? Or should I speak in Dutch!?");
+                Thread.sleep(1500);
+                Print.textln("U moet een getal tussen 1-100 invoeren. You need to enter a number between 1-100");
+                Thread.sleep(1500);
+                Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old man.");
+
+            }
+        }
+    }
+
     private static void guess(String str, int num) throws InterruptedException {
         if(Integer.parseInt(str)==num) {
             Thread.sleep(1300);
