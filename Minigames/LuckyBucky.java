@@ -71,7 +71,7 @@ public class LuckyBucky {
         String str;
         int temp=0;
         while(turns>0){
-            Print.textln("You have "+turns+" remaining");
+            Print.textln("You have "+turns+(turns==1?" turn":" turns")+" remaining");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
             Print.textln("Response:");
@@ -186,15 +186,15 @@ public class LuckyBucky {
         Thread.sleep(2000);
         Print.textln("Honour thy soul for being such a good sport!");
         Thread.sleep(3000);
-        Print.textln("You know the rules...and so do I! And if you suck, you die...ahum! ahum! Guess a number...");
-        Thread.sleep(2000);
+        Print.textln("You know the rules...and so do I! And if you suck, you die...ahum! ahum! That rhymed! Guess a number now...");
+        Thread.sleep(3000);
         Print.textln("Any number. YES! ANY NUMBER! Greater or lesser, bigger or smaller, perferct square or automorphic, happy number or sad...");
         Thread.sleep(3000);
-        Print.textln("No! It can't be your gf's phone number because your guess should be between 1 to 100.\n");
+        Print.textln("No! It can't be your GF's phone number because your guess should be between 1 to 100.\n");
         Thread.sleep(3000);
-        Print.textln("Before the cops raid & beat the shit out of me for shooting your arse, tell me your guess...");
+        Print.textln("Before the cops raid & beat the shite out of me arse for shooting your behind, tell me your guess...");
         Thread.sleep(2000);
-        Print.textln("\nYou can say \"I want to make a final guess\" anytime to make the final guess!");
+        Print.textln("\nYou can say \"I want to make a final guess, kind Sir,\" anytime to make the final guess!");
         Thread.sleep(1400);
         String str;
         int turns=5;
@@ -202,7 +202,7 @@ public class LuckyBucky {
         while(turns>0){
             int num=rand.nextInt(100);
             System.out.println();
-            Print.textln("\nYou have "+turns+" turns remaining");
+            Print.textln("\nYou have "+turns+(turns==1?" turn":" turns")+" remaining");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
             Print.textln("Response:");
