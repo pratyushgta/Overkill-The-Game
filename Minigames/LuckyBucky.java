@@ -16,7 +16,7 @@ public class LuckyBucky {
         Thread.sleep(2000);
         options();
         Thread.sleep(2000);
-        Print.textln("Thank you for coming here! We hope to see you again soon!");
+        Print.textln("Thank you for coming here! I hope to see you again soon!");
     }
 
     private static void options() throws IOException, InterruptedException {
@@ -186,13 +186,12 @@ public class LuckyBucky {
         Thread.sleep(2000);
         Print.textln("Honour thy soul for being such a good sport!");
         Thread.sleep(3000);
-        Print.textln("You know the rules...if you suck, you die...ahum! ahum! Guess a number...");
+        Print.textln("You know the rules...and so do I! And if you suck, you die...ahum! ahum! Guess a number...");
         Thread.sleep(2000);
-        Print.textln("Any number. YES! ANY NUMBER! Greater or lesser, bigger or smaller, perferct square or automorphic, happy number or sad ..");
+        Print.textln("Any number. YES! ANY NUMBER! Greater or lesser, bigger or smaller, perferct square or automorphic, happy number or sad...");
         Thread.sleep(3000);
-        Print.textln("No! It can't be your gf's phone number because your guess should be between 1 to 100.");
+        Print.textln("No! It can't be your gf's phone number because your guess should be between 1 to 100.\n");
         Thread.sleep(3000);
-        System.out.println();
         Print.textln("Before the cops raid & beat the shit out of me for shooting your arse, tell me your guess...");
         Thread.sleep(2000);
         Print.textln("\nYou can say \"I want to make a final guess\" anytime to make the final guess!");
@@ -253,7 +252,7 @@ public class LuckyBucky {
 
             else
             {
-                Print.textln("You... do you understand english!? Or should I speak in Dutch!?");
+                Print.textln("You... do you understand english!? Or should I speak in Dutch!?"); //AHAHAHAH WOW Nice easter egg (~By Bolton)
                 Thread.sleep(1500);
                 Print.textln("U moet een getal tussen 1-100 invoeren. You need to enter a number between 1-100");
                 Thread.sleep(1500);
