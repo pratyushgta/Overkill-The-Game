@@ -254,7 +254,7 @@ public class LuckyBucky {
             {
                 Print.textln("You... do you understand english!? Or should I speak in Dutch!?"); //AHAHAHAH WOW Nice easter egg (~By Bolton)
                 Thread.sleep(1500);
-                Print.textln("U moet een getal tussen 1-100 invoeren. You need to enter a number between 1-100");
+                Print.textln("U moet een getal tussen van 1 tot 100 invoeren. You need to enter a number between 1 and 100");
                 Thread.sleep(1500);
                 Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old man.");
 
