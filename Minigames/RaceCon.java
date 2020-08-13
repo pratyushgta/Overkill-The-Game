@@ -168,65 +168,11 @@ public class RaceCon {
 
     private static void race() throws InterruptedException, IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        Print.textln("CowBoy Codey:\nChoose a horse you'd like to race on!");
-        horselist();
-        String horse="";
-        Print.textln("Response: ");
-        horse=br.readLine();
-        Thread.sleep(1000);
-        if(horse.toLowerCase().contains("exit")){
-            options();           
-        }
-        while(Integer.parseInt(horse)==0 || Integer.parseInt(horse)>5)
-        {
-            Print.textln("You need to enter a horse number from available options");
-            Print.textln("Response: ");
-            horse=br.readLine();
-        }
-        Random rand = new Random();
-        Print.textln("Okay! So, you've selected Horse "+horse+".\nLet's see if you're lucky enough or return home with a duck!");
-        Thread.sleep(1000);
-        Print.textln("Jerry: Are you ready to fuuusee?");
-        Print.text("Response: ");
+        Print.textln("CowBoy Codey:\nI fear you aren't trained to ride a horse, yet.");
+        Print.textln("Go, ride an Unicorn, kid....");
+        Print.textln("Reapond: ");
         br.readLine();
-        Thread.sleep(1000);
-        System.out.println();
-        Print.textln("What a great sunny day here in OKTown,\nI would have been in front of some beach in Hawaii but here I am serving you rich heads");
-        System.out.println();
-        Thread.sleep(2500);
-        Print.textln("Turn your bull-heads towards the race course because the powerful horses are out of their stables,\nready to rock & roll!");
-        System.out.println();
-        Thread.sleep(4000);
-        Print.textln("Horse "+rand.nextInt(6)+" has taken the lead");
-        Thread.sleep(1500);
-        Print.textln("Horse "+rand.nextInt(6)+" has taken the lead");
-        Thread.sleep(1500);
-        Print.textln("Horse "+rand.nextInt(6)+" has taken the lead");
-        Thread.sleep(1500);
-        Print.textln("Horse "+rand.nextInt(6)+" has taken the lead");
-        Thread.sleep(1500);
-        Print.textln("Horse "+rand.nextInt(6)+" has taken the lead");
-        Thread.sleep(1500);
-        int winhorse=rand.nextInt(6);
-        if(winhorse==0){
-            winhorse=winhorse+1;
-        }
-        else if(winhorse>5){
-            winhorse=winhorse-1;
-        }
-        Print.textln("Horse "+winhorse+" has taken the final lead, crossed the end line & won the RaceCon 2020!");
-        Thread.sleep(1500);
-
-        if(winhorse==Integer.parseInt(horse))
-        {
-            Print.textln("You! Yes You! Just got won the Grand RaceCon Gamble Jackpot!");
-            Stats.money+=500;
-        }
-        else
-        {
-            Print.textln("You looooose!");
-            Stats.money-=500;
-        }
+        options();
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
