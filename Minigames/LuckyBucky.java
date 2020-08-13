@@ -10,7 +10,7 @@ public class LuckyBucky {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
         Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false);
         Thread.sleep(1000);
-        Print.textln("Bucky:\nLook at how the turns have tabled!");
+        Print.textln("Billy:\nLook at how the turns have tabled!");
         Thread.sleep(1500);
         Print.textln("I now present to you a new game mode! Only available in OKTown.");
         Thread.sleep(2000);
@@ -21,7 +21,7 @@ public class LuckyBucky {
 
     private static void options() throws IOException, InterruptedException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500)"});
+        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500)","Go back"});
         Print.textln("Response:");
         int choice= Integer.parseInt(br.readLine());
         if(choice==1){
@@ -38,6 +38,8 @@ public class LuckyBucky {
             Stats.money-=100;
             classic();
         }
+        else if(choice==3){
+        }
         else{
             Print.textln("You... naughty, naughty bi... person!");
             Thread.sleep(1500);
@@ -50,7 +52,7 @@ public class LuckyBucky {
 
     private static void guessMyNumber() throws InterruptedException, IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        Print.textln("Bucky:\nYOU!");
+        Print.textln("Billy:\nYOU!");
         Thread.sleep(1000);
         Print.textln("...Yes you!");
         Thread.sleep(1000);
@@ -178,7 +180,7 @@ public class LuckyBucky {
     private static void classic() throws InterruptedException, IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));       
         System.out.println();
-        Print.textln("Bucky:\nYOU!");
+        Print.textln("Billy:\nYOU!");
         Thread.sleep(1000);
         Print.textln("...Yes you!");
         Thread.sleep(1000);
@@ -234,12 +236,12 @@ public class LuckyBucky {
                 }
                 else
                 {
-                    int failch=rand.nextInt(3);
+                    int failch=rand.nextInt(3);                 
                     if(failch==1){
                         Print.textln("Better luck, next time. You loOoOose! Haha. The number was "+num);
                     }
                     else if(failch==2){ 
-                        Print.textln("Yay! you saved my money by not winning! Lucky number was "+num);
+                        Print.textln("Yay! you saved my buckyies by not winning! Lucky number was "+num);
                     }
                     else
                     {
@@ -254,7 +256,7 @@ public class LuckyBucky {
             {
                 Print.textln("You... do you understand english!? Or should I speak in Dutch!?"); //AHAHAHAH WOW Nice easter egg (~By Bolton)
                 Thread.sleep(1500);
-                Print.textln("U moet een getal tussen van 1 tot 100 invoeren. You need to enter a number between 1 and 100");
+                Print.textln("U moet een getal tussen van 1 tot 100 invoeren. You need to enter a number between 1 and 100.");
                 Thread.sleep(1500);
                 Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old man.");
 
