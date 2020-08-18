@@ -20,6 +20,7 @@ public class RaceCon {
     }
 
     private static void options() throws IOException, InterruptedException {
+        Stats.money=5000;
         Scene.choice(new String[]{"The Ruthless Gamble (Entry Fee: $50)","Back in the Race(Cost: $150; Win: $600)","Go back"});
         Print.textln("Response:");
         int choice=Input.Int();
@@ -71,27 +72,27 @@ public class RaceCon {
         Print.textln("CowBoy Codey:\n**DIALOGUE**");
         Print.textln();
         Thread.sleep(2500);
-        Print.line("-",20);
+        Print.lineln("-",20);
         Print.textln("Horse 1: Red Raptor\nRaces Won: 18\nStrength: \nRemarks: ");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
-        Print.line("-",20);
+        Print.lineln("-",20);
         Print.textln("Horse 2: EuroStar Unicorn\nRaces Won: 9\nStrength: \nRemarks: ");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
-        Print.line("-",20);
+        Print.lineln("-",20);
         Print.textln("Horse 3: Blue Bandit\nRaces Won: 22\nStrength: \nRemarks: ");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
-        Print.line("-",20);
+        Print.lineln("-",20);
         Print.textln("Horse 4: Inky Pinky\nRaces Won: 14\nStrength: \nRemarks: ");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
-        Print.line("-",20);
+        Print.lineln("-",20);
         Print.textln("Horse 5: Gold Flake\nRaces Won: 9\nStrength: \nRemarks: ");
         Print.line("-",20);
         Print.textln();
@@ -161,14 +162,19 @@ public class RaceCon {
 
         if(winhorse==Integer.parseInt(horse))
         {
-            Print.textln("You! Yes You! Just got won the Grand RaceCon Gamble Jackpot!");
+            Print.textln("\nYou! Yes You! Just got won the Grand RaceCon Gamble Jackpot!");
             Stats.money+=bet;
+            Thread.sleep(1500);  
         }
         else
         {
-            Print.textln("You looooose!");
+            Print.textln("\nYou looooose!");
             Stats.money-=bet;
+            Thread.sleep(1500);
         }
+        Print.textln("Press any key to continue when you're done admiring your luck..");
+        br.readLine();
+        options();
         return true;
     }
 
