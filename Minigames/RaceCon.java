@@ -33,7 +33,12 @@ public class RaceCon {
                 Print.textln("Gambling is subject to market risks. Read all scheme related documents carefully...\n");
                 Thread.sleep(2000);
                 Stats.money -= 50;
-                gamble(1);
+                boolean ifFirst=true, ifSuccess=true;
+
+                while(ifSuccess) {
+                    ifSuccess=gamble(ifFirst);
+                    ifFirst=false;
+                }
             }
         }
         else if(choice==2){
@@ -92,10 +97,10 @@ public class RaceCon {
         Print.textln();
     }
 
-    private static void gamble(int run) throws InterruptedException, IOException {
+    private static boolean gamble(boolean ifFirst) throws InterruptedException, IOException {
         String horse;
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        if(run==1) {
+        if(ifFirst) {
             Print.textln("CowBoy Codey:\nChoose a horse to gamble your stakes on!");
             horseList();
         }
@@ -127,7 +132,7 @@ public class RaceCon {
             Scene.choice(new String[]{"Place a lower bet","Go back"});
             int ch=Input.Int();
             if(ch==1){
-                gamble(2);
+                return false;
             }
             else {
                 options();
@@ -164,6 +169,7 @@ public class RaceCon {
             Print.textln("You looooose!");
             Stats.money-=bet;
         }
+        return true;
     }
 
     private static void race() throws InterruptedException, IOException {
