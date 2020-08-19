@@ -20,11 +20,8 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
             System.out.println();
             Print.textln("Receptionist:\nWelcome back for the 20th time this freakin month!\nCombiflam or Metformin? What would you like to order?");
             Thread.sleep(1500);
-            Print.textln("rEsPoNd:");
-            Thread.sleep(2000);
-            Input.String();
             options();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             Print.textln("Hospital ceiling are boring to look at...Just sayin..Thank you for coming here!");
         }
     }
@@ -35,36 +32,36 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
-            /*if(Stats.money<10)
+            if(Stats.money<10)
             Print.error("I don't think you have enough money for this, mate. Go get some buckies to make some buckies!");
-            else {*/
-            Print.textln("After exitting this room, turn next right, then turn left, then make a sharp left followed by a left again to the lift lobby\nand from there, take the sixth lift to sixteenth floor. Once you reach there, \nturn left, then right, up the stairs to the OPD no.5!");
+            else {
+            Print.textln("After exiting this room, turn next right, then turn left, then make a sharp left followed by a left again to the lift lobby\nand from there, take the sixth lift to sixteenth floor. Once you reach there, \nturn left, then right, up the stairs to the OPD no.5!");
             Thread.sleep(8000);
             Stats.money -= 100;
             checkup();
-            //}
+            }
         }
         else if(choice==2){
             Thread.sleep(1200);
-            /*if(Stats.money<100)
+            if(Stats.money<100)
             Print.error("You might want to try your luck at Lucky Bucky's, but I don't want to try my luck with someone who doesn't have enough money for this option!");
-            else {*/
+            else {
             Print.textln("Okay!...Let's make this aqap..as quick as possible..");
             Thread.sleep(1000);
             Stats.money -= 300;
             emergency();
-            //}
+            }
         }
         else if(choice==3){
             Thread.sleep(1500);
-            /*if(Stats.money<100)
+            if(Stats.money<100)
             Print.error("You might want to try your luck at Lucky Bucky's, but I don't want to try my luck with someone who doesn't have enough money for this option!");
-            else {*/
+            else {
             Print.textln("GET AWAY PEOPLE! Depressed person on the wayyyyyy...vroooommmmmmm");
             Thread.sleep(2000);
             Stats.money -= 50;
             councilor();
-            //}
+            }
         }
         else if(choice==4){
         }
@@ -80,12 +77,12 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
 
     private static void checkup() throws InterruptedException, IOException {
         System.out.println();
-        Print.textln("Johnny-the-Doc: Swallowed dog-bones? Drank mercury? Fractured your hips? What troubleth's thee mine own taxpay'r? ");
+        Print.textln("Doctor Strange: Swallowed dog-bones? Drank mercury? Fractured your hips? What troubleth's thee mine own taxpay'r? ");
         Thread.sleep(1000);
         Print.text("Respond: ");
         Input.String();
         Thread.sleep(1000);
-        Print.textln("Johnny-the-Doc: No problem! Just take 700 grams of Aspirin & 12 tablets of Morphine\nand you'll be neighing like a horse again!");
+        Print.textln("Doctor Strange: No problem! Just take 700 grams of Aspirin & 12 tablets of Morphine\nand you'll be neighing like a horse again!");
         Thread.sleep(2000);
         Print.text("Respond: ");
         Input.String();
