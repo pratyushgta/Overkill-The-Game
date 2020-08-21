@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class RaceCon {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of Racecourse
-        Scene.make("RaceCon","Just because we couldn't fit a Sports Stadium, we made RaceCon! Welcome to the world of Racing Drama!",null,Num.round(Stats.money,2),true,Stats.HP,false);
+        Scene.make("RaceCon","Just because we couldn't fit a Sports Stadium, we made RaceCon! Welcome to the world of Racing Drama!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false);
         Thread.sleep(1000);
         Print.textln("CowBoy Codey:\n**DIALOGUE**!");
         Thread.sleep(1500);
@@ -34,10 +34,10 @@ public class RaceCon {
                 Print.textln("Gambling is subject to market risks. Read all scheme related documents carefully...\n");
                 Thread.sleep(2000);
                 Stats.money -= 50;
-                boolean ifFirst=true, ifSuccess=true;
+                boolean ifFirst=true, ifFail=true;
 
-                while(ifSuccess) {
-                    ifSuccess=gamble(ifFirst);
+                while(ifFail) {
+                    ifFail=gamble(ifFirst);
                     ifFirst=false;
                 }
             }
@@ -133,7 +133,7 @@ public class RaceCon {
             Scene.choice(new String[]{"Place a lower bet","Go back"});
             int ch=Input.Int();
             if(ch==1){
-                return false;
+                return true;
             }
             else {
                 options();
@@ -175,7 +175,7 @@ public class RaceCon {
         Print.textln("Press any key to continue when you're done admiring your luck..");
         br.readLine();
         options();
-        return true;
+        return false;
     }
 
     private static void race() throws InterruptedException, IOException {

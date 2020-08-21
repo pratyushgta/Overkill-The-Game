@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class Safehouse {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true);
+        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true);
         Thread.sleep(1000);
         options();
         Print.textln("Seeya");
@@ -68,7 +68,7 @@ public class Safehouse {
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
         Print.lineln("-",20);
-        Print.textln("You have: "+Stats.money+"\nYour HP: "+Stats.HP+"\nTime:\nCurrent Weapon: "+Stats.weapons);
+        Print.textln("You have: "+Stats.money+"\nYour HP: "+Stats.HP+"\nTime:\nCurrent Weapon: "+Stats.weapon);
         Print.lineln("-",20);
         Print.textln("Press any key when you are done mesmerizing the stats..");
         br.readLine();
