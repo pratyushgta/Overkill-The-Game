@@ -1,0 +1,4 @@
+name:	BooBooBaaBaa
+label:	buckyshouse
+HP:	90.0
+money:	230.0
