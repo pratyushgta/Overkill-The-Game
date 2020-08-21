@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class LuckyBucky {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
-        Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false);
+        Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false);
         Thread.sleep(1000);
         Print.textln("Billy:\nLook at how the turns have tabled!");
         Thread.sleep(1500);

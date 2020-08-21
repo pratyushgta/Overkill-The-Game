@@ -1,17 +1,14 @@
 package Buildings;
 import Overkill_Engine.*;
 import Backend.Stats;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Random;
 
 public class StationemVigilum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
     private static void exec1() throws InterruptedException, IOException { //First time main run method of comisaria
-        Scene.make("Flippin Sheriff Station","Eyes on the city...",null,Num.round(Stats.money,2),true,Stats.HP,true);
+        Scene.make("Flippin Sheriff Station","Eyes on the city...",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false);
         Thread.sleep(1000);
-        if(Stats.wanted==true)
+        if(Stats.wanted)
         {
             arrest();
         }
@@ -140,7 +137,7 @@ public class StationemVigilum //Yeah...we made it super difficult for you to und
         Print.textln("You'll be staying here for another 12 hours.\nAll you weapons have been confiscated and\nsome of your money taken away for bail proceedings.");
         Thread.sleep(2500);
         Stats.wanted=false;
-        Stats.money-=(20/100*Stats.money);
+        Stats.money-=(0.2*Stats.money);
         Print.textln();
         Print.textln("You're now as free as a bird...");
         Print.textln("Respond: ");
