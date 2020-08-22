@@ -9,7 +9,7 @@ import java.util.Random;
 public class MedischCentrum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Death Valley Health Center","The only place where 'positive' means a bad thing.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false);
+        Scene.make("Death Valley Health Center","The only place where 'positive' means a bad thing.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         if(Stats.HP<=10)
         {

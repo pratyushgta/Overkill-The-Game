@@ -6,7 +6,7 @@ package Overkill_Engine;
  * @version 1.0.0
  */
 public class TimeModule {
-    public static int[] TimeChange(int[] time, int changeHour, int changeMin) {
+    public static int[] timeChange(int[] time, int changeHour, int changeMin) {
         time[1] += changeMin;
         if (time[1] >= 60) {
             while (time[1] >= 60) {
@@ -34,7 +34,7 @@ public class TimeModule {
         return time;
     }
 
-    public static String PrintableTime(int[] time) {
+    public static String printableTime(int[] time) {
         StringBuilder hour = new StringBuilder(String.valueOf(time[0]));
         StringBuilder min = new StringBuilder(String.valueOf(time[1]));
         if (hour.length() == 1)
@@ -42,8 +42,5 @@ public class TimeModule {
         if (min.length() == 1)
             min.insert(0, "0");
         return hour + ":" + min;
-    }
-
-    public static void main(String[] args) {
     }
 }
