@@ -7,7 +7,7 @@ package Overkill_Engine;
  */
 public class Print
 {
-    public static void text(String text){ System.out.print(text.trim()); }
+    public static void text(String text){ System.out.print(text); }
     public static void text(boolean bool){
         System.out.print(bool);
     }
@@ -27,7 +27,7 @@ public class Print
         System.out.print(num);
     }
     public static void textln(String text){
-        System.out.println(text.trim());
+        System.out.println(text);
     }
     public static void textln(boolean bool){
         System.out.println(bool);
@@ -50,11 +50,11 @@ public class Print
     public static void textln(){
         System.out.println();
     }
-    public static void header(String headerText){
+    public static void header(String headerText,String headerLineMaker){
         Print.textln();
-        Print.lineln("*",headerText.length());
+        Print.lineln(headerLineMaker,headerText.length());
         Print.textln(headerText.toUpperCase().trim());
-        Print.lineln("*",headerText.length());
+        Print.lineln(headerLineMaker,headerText.length());
         Print.textln();
     }
     public static void error(String error_message){

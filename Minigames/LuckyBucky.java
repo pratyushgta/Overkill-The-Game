@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class LuckyBucky {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
-        Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false);
+        Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         Print.textln("Billy:\nLook at how the turns have tabled!");
         Thread.sleep(1500);
@@ -81,7 +81,7 @@ public class LuckyBucky {
         String str;
         int temp=0;
         while(turns>0){
-            Print.header("You have "+turns+(turns==1?" turn":" turns")+" remaining");
+            Print.header("You have "+turns+(turns==1?" turn":" turns")+" remaining","*");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
             Print.textln("Response:");
@@ -212,7 +212,7 @@ public class LuckyBucky {
         while(turns>0){
             int num=rand.nextInt(100);
             System.out.println();
-            Print.header("\nYou have "+turns+(turns==1?" turn":" turns")+" remaining");
+            Print.header("\nYou have "+turns+(turns==1?" turn":" turns")+" remaining","*");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
             Print.textln("Response:");

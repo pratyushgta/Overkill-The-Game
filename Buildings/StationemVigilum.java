@@ -6,7 +6,7 @@ import java.io.IOException;
 public class StationemVigilum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
     private static void exec1() throws InterruptedException, IOException { //First time main run method of comisaria
-        Scene.make("Flippin Sheriff Station","Eyes on the city...",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false);
+        Scene.make("Flippin Sheriff Station","Eyes on the city...",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         if(Stats.wanted)
         {

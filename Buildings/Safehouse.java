@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class Safehouse {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true);
+        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         options();
         Print.textln("Seeya");

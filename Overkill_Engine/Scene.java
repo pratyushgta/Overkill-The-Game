@@ -11,38 +11,34 @@ public class Scene
         System.out.println('\u000C');
     }
 
-    public static void make(String currentLoc, String describeLoc, String choicePrompt, double money, boolean showMoney, double HP, boolean showHP, String weapon, boolean showWeapon,boolean wanted, boolean showWanted){
+    public static void make(String currentLoc, String describeLoc, String choicePrompt, double money, boolean showMoney, double HP, boolean showHP, String weapon, boolean showWeapon,boolean wanted, boolean showWanted,String time,boolean showTime){
         Scene.clear();
         if(currentLoc!=null){
             currentLoc=currentLoc.trim();
-            Print.textln();
-            Print.lineln("*",currentLoc.length());
-            Print.textln(currentLoc.toUpperCase());
-            Print.lineln("*",currentLoc.length());
+            Print.header(currentLoc,"*");
         }
         if(describeLoc!=null){
             describeLoc=describeLoc.trim();
-            Print.textln(describeLoc);
-            Print.textln();
+            Print.textln(describeLoc+"\n");
         }
         if(choicePrompt!=null){
             choicePrompt=choicePrompt.trim();
-            Print.textln(choicePrompt);
-            Print.textln();
+            Print.textln(choicePrompt+"\n");
         }
         if(showMoney){
-            Print.textln("You have $"+money);
-            Print.textln();
+            Print.textln("You have $"+money+"\n");
         }
         if(showHP){
-            Print.textln("Your HP: "+HP);
-            Print.textln();
+            Print.textln("Your HP: "+HP+"\n");
         }
         if(showWeapon){
-            Print.textln("Your weapon: "+weapon);
+            Print.textln("Your weapon: "+weapon+"\n");
         }
         if(showWanted){
-            Print.textln((wanted)?"You are in the wanted list":"You are not in the wanted list");
+            Print.textln((wanted)?"Wanted status: You are wanted":"Wanted status: You are not in the wanted list\n");
+        }
+        if(showTime){
+            Print.textln("The time is "+time);
         }
     }
 
