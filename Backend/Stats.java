@@ -9,7 +9,7 @@ public class Stats {
     public static double HP=100.0d;
     public static double money=500.0d;
     public static boolean wanted=false;
-    public static String weapon="fists";
+    public static String weapon="Fists";
     public static int[] time={12,00};
     public static String labels;
     public static void loadFromSave() throws IOException {
