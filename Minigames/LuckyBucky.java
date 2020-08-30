@@ -13,7 +13,7 @@ public class LuckyBucky {
         Print.textln("I now present to you a new game mode! Only available in OKTown.");
         Thread.sleep(2000);
         options();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         Print.textln("Thank you for coming here! I hope to see you again soon!");
     }
 
@@ -226,20 +226,20 @@ public class LuckyBucky {
             }
             if(str.matches(".*\\d.*")&&Integer.parseInt(str)>=0&&Integer.parseInt(str)<=100&&Integer.parseInt(str)==num)
             {
-                    int ch=rand.nextInt(3);
-                    if(ch==1){
-                        Print.textln("What!? Unbelievable! You won!");
-                    }
-                    else if(ch==2){ 
-                        Print.textln("No Wayy...! No wayyy..! You little ball of.. You guessed it correctly!");
-                    }
-                    else
-                    {
-                        Print.textln("You. Sir, yes You! Just guessed the number correctly!");
-                    }
-                    Stats.money+=500.0;
-                    total+=500.0;
-                    turns--;
+                int ch=rand.nextInt(3);
+                if(ch==1){
+                    Print.textln("What!? Unbelievable! You won!");
+                }
+                else if(ch==2){ 
+                    Print.textln("No Wayy...! No wayyy..! You little ball of.. You guessed it correctly!");
+                }
+                else
+                {
+                    Print.textln("You. Sir, yes You! Just guessed the number correctly!");
+                }
+                Stats.money+=500.0;
+                total+=500.0;
+                turns--;
             }
             else if(str.matches(".*\\d.*")&&Integer.parseInt(str)>=0&&Integer.parseInt(str)<=100)
             {
@@ -292,7 +292,7 @@ public class LuckyBucky {
         }
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(/*String[] args*/) throws IOException, InterruptedException {
         exec1();
     }
 }

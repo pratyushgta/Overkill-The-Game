@@ -102,7 +102,7 @@ public class Safehouse {
         options();
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(/*String[] args*/) throws IOException, InterruptedException {
         exec1();
     }
 }
