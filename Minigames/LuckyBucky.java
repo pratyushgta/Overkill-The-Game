@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Random;
 
 public class LuckyBucky {
-    public static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
+    private static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
         Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         Print.textln("Billy:\nLook at how the turns have tabled!");
@@ -292,7 +292,7 @@ public class LuckyBucky {
         }
     }
 
-    public static void main(/*String[] args*/) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
 }

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Random;
 
 public class RaceCon {
-    public static void exec1() throws InterruptedException, IOException { //First time main run method of Racecourse
+    private static void exec1() throws InterruptedException, IOException { //First time main run method of Racecourse
         Scene.make("RaceCon","Just because we couldn't fit a Sports Stadium, we made RaceCon! Welcome to the world of Racing Drama!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         Print.textln("\nCowBoy Codey:\n**DIALOGUE**!");
@@ -187,7 +187,7 @@ public class RaceCon {
         options();
     }
 
-    public static void main(/*String[] args*/) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
 }

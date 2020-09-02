@@ -146,7 +146,7 @@ public class StationemVigilum //Yeah...we made it super difficult for you to und
         options();
     }
 
-    public static void main(/*String[] args*/) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
 }
