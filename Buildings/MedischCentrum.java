@@ -139,7 +139,7 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
         options();
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(/*String[] args*/) throws IOException, InterruptedException {
         exec1();
     }
 }
