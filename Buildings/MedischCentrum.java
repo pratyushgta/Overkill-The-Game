@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class MedischCentrum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
-    public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
+    private static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
         Scene.make("Death Valley Health Center","The only place where 'positive' means a bad thing.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         if(Stats.HP<=10)
@@ -22,7 +22,7 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
             Thread.sleep(1500);
             options();
             Thread.sleep(1000);
-            Print.textln("Hospital ceiling are boring to look at...Just sayin..Thank you for coming here!");
+            Print.textln("Hospital ceiling are boring to look at...Just sayin'...Thank you for coming here!");
         }
     }
 
@@ -133,13 +133,13 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
         Thread.sleep(800);
         Print.textln("Ahh..How can a person who itself needs a councilor, be a councilor?");
         Thread.sleep(1000);
-        Print.textln("Nvm...come back later!");
+        Print.textln("Nevermind...come back later!");
         Thread.sleep(1000);
         Stats.money+=50;
         options();
     }
 
-    public static void main(/*String[] args*/) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
 }

@@ -8,7 +8,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Safehouse {
-    public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
+    private static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
         Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         options();
@@ -102,7 +102,7 @@ public class Safehouse {
         options();
     }
 
-    public static void main(/*String[] args*/) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
 }
