@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class Safehouse {
     private static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true,TimeModule.printableTime(Stats.time),true);
+        Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         options();
         Print.textln("Seeya");
@@ -68,7 +68,14 @@ public class Safehouse {
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
         Print.lineln("-",20);
-        Print.textln("You have: "+Stats.money+"\nYour HP: "+Stats.HP+"\nTime:\nCurrent Weapon: "+Stats.weapon);
+        Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour Hp: "+Stats.HP+"\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
+        if(Stats.wanted==false){
+            Print.textln("Wanted Status: You are not on the wanted list");
+        }
+        else
+        {
+            Print.textln("Wanted Status: The cops are looking for you in every nook and corner...");
+        }
         Print.lineln("-",20);
         Print.textln("Press any key when you are done mesmerizing the stats..");
         br.readLine();

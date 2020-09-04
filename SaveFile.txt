@@ -1,4 +1,9 @@
-name:	BooBooBaaBaa
-label:	buckyshouse
-HP:	90.0
-money:	230.0
+default_player
+100.0
+0.0
+noweapon
+false
+12:00
+
+mangoes
+apples
