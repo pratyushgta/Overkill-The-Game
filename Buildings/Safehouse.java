@@ -12,11 +12,13 @@ public class Safehouse {
         Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         options();
-        Print.textln("Seeya");
+        Print.textln("See ya");
+        Thread.sleep(2000);
+        Scene.clear();
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Load Game","Go Back"});
+        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu","Go Back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -32,8 +34,11 @@ public class Safehouse {
             savegame();
         }
         else if(choice==4){
-            Thread.sleep(1500);
-            loadgame();
+            Print.textln("All unsaved changes will be lost.");
+            Scene.choice(new String[]{"Save and Quit","Quit without saving"});
+            choice=Input.Int();
+            if(choice==1)
+                savegame();
         }
         else if(choice==5){
             Thread.sleep(1500);
@@ -54,7 +59,7 @@ public class Safehouse {
         Thread.sleep(1500);
         Print.textln("ZZZzzzzzzzzz");
         Thread.sleep(1500);
-        Print.textln("Yay! You are now as fresh as daisy!");
+        Print.textln("Yay! You are now as fresh as a daisy!");
         Thread.sleep(1500);
         Print.text("Blabber something real quick.. : ");
         Thread.sleep(1000);
@@ -69,7 +74,7 @@ public class Safehouse {
         BufferedReader br=new BufferedReader(isr);
         Print.lineln("-",20);
         Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour Hp: "+Stats.HP+"\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
-        if(Stats.wanted==false){
+        if(!Stats.wanted){
             Print.textln("Wanted Status: You are not on the wanted list");
         }
         else
@@ -83,32 +88,10 @@ public class Safehouse {
     }
 
     private static void savegame() throws InterruptedException, IOException {
-        InputStreamReader isr=new InputStreamReader(System.in);
-        BufferedReader br=new BufferedReader(isr);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy\tHH.mm");
-        Date dateobj = new Date();
-        String printTime=sdf.format(dateobj);
-        Print.lineln("-",45);
-        Print.textln("Game Saved Successfully @"+printTime);
-        Print.lineln("-",45);
-        Thread.sleep(2000);
-        Print.textln("Press any key to go back");
-        br.readLine();
+        Stats.writeToSave();
+        Print.textln("The game has been saved");
         options();
     }
-
-    private static void loadgame() throws InterruptedException, IOException {
-        InputStreamReader isr=new InputStreamReader(System.in);
-        BufferedReader br=new BufferedReader(isr);
-        Print.lineln("-",20);
-        Print.textln("No Load Game Found");
-        Print.lineln("-",20);
-        Thread.sleep(2000);
-        Print.textln("Press any key to go back");
-        br.readLine();
-        options();
-    }
-
     public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
