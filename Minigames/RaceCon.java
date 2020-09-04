@@ -20,7 +20,6 @@ public class RaceCon {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Stats.money=5000;
         Scene.choice(new String[]{"The Ruthless Gamble (Entry Fee: $50)","Back in the Race(Cost: $150; Win: $600)","Go back"});
         Print.textln("Response:");
         int choice=Input.Int();

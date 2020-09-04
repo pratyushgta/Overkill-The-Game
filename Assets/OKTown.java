@@ -1,3 +1,4 @@
+package Assets;
 import Overkill_Engine.*;
 import Backend.Stats;
 import Buildings.*;
@@ -16,7 +17,7 @@ public class OKTown{
         Print.textln();
         Print.header("QUICK TRAVEL KIOSK","-");
         Print.textln("Where would you like to go?");
-        Scene.choice(new String[]{"Safehouse","Lucky Bucky","RaceCon","Police Station","Hospital","Exit"});
+        Scene.choice(new String[]{"Safehouse","Lucky Bucky","RaceCon","Police Station","Hospital","GunPoint","Exit"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -40,6 +41,10 @@ public class OKTown{
             options();
         }
         else if(choice==6){
+            GunPoint.main(new String[] {});
+            options();
+        }
+        else if(choice==7){
             Print.textln("Thank You for visiting The Fabulous OKTown. Hope to see you soon!");
         }
         else{
