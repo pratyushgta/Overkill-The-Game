@@ -2,6 +2,8 @@ package Overkill_Engine;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -188,11 +190,7 @@ public class Save {
         String labels=getLabels();
         return labels.contains(labelToCheck.toLowerCase());
     }
-    public static void main(String[] args) throws IOException {
-        Save.make();
-        Save.addLabel("mangoes");
-        Save.addLabel("mangoes");
-        Save.addLabel("apples");
-        Print.textln(LabelExists("mangoes"));
+    public static void delete() throws IOException {
+        Files.delete(Paths.get("SaveFile.txt"));
     }
 }
