@@ -90,6 +90,7 @@ public class Safehouse {
     private static void savegame() throws InterruptedException, IOException {
         Stats.writeToSave();
         Print.textln("The game has been saved");
+        Thread.sleep(1000);
         options();
     }
     public static void main(String[] args) throws IOException, InterruptedException {

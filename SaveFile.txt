@@ -4,6 +4,3 @@ default_player
 noweapon
 false
 12:00
-
-mangoes
-apples
