@@ -11,8 +11,8 @@ import Overkill_Engine.Scene;
 import java.io.*;
 
 /**
- * This is the main class of the game. Click on run on this class to play the game. 
- * Version: 4.0.0 Developement Build: August Update 
+ * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
+ * Version: 0.0.1 Developement Build: August Update
  */
 public class mainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  {
@@ -37,6 +37,8 @@ public class mainMenu {
         Scene.choice(new String[]{"START A NEW ADVENTURE","LOAD GAME","GO BACK"});
         int choice = Input.Int();
         if(choice==1) {
+            if(Save.SaveExists())
+                Save.delete();
             Save.make();
             OKTown.main(new String[]{});
         }
@@ -60,15 +62,15 @@ public class mainMenu {
     private static void settings() throws IOException, InterruptedException {
         Scene.clear();
         Print.header("SETTINGS","-");
-        Scene.choice(new String[]{"CLEAR LOAD GAME","CHECK VERSION","GO BACK"});
+        Scene.choice(new String[]{"DELETE SAVE","CHECK VERSION","GO BACK"});
         int choice = Input.Int();
         if(choice==1) {
-            Print.textln("Type RESET if you're 101% sure you want to reset the game.\nRemember, you'll lose all your progress & achievements. This cannot be undone."); 
+            Print.textln("Type 'RESET' if you're 101% sure you want to reset the game.\nRemember, you'll lose all your progress & achievements. This cannot be undone.");
             String str=Input.String();
             if(str.toLowerCase().contains("reset")){
-                Save.removeAllLabels();
+                Save.delete();
                 Thread.sleep(1000);
-                Print.textln("Your game is as fresh as a lily!");
+                Print.textln("Your game is now deleted. It's gone like Unus Annus");
                 Thread.sleep(1500);
                 settings();
             }
@@ -79,7 +81,7 @@ public class mainMenu {
             }
         }
         else if(choice==2){
-            Print.textln("Game Version: August Update 4 | v4.1.0 Developement Build");
+            Print.textln("Game Version: August Update 4 | v0.0.1 Developement Build");
             Thread.sleep(2000);
             settings();
         }

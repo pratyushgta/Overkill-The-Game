@@ -1,8 +1,4 @@
 package Overkill_Engine;
-
-import java.io.IOException;
-import java.io.PrintStream;
-
 /**
  * This class contains all methods regarding printing and outputting simple single line text and patterns.
  *
