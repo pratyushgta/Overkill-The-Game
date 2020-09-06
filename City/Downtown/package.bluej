@@ -1,15 +1,15 @@
 #BlueJ package file
-dependency1.from=Downtown
-dependency1.to=MedischCentrum
+dependency1.from=EstacioCentral
+dependency1.to=Downtown
 dependency1.type=UsesDependency
 dependency2.from=Downtown
-dependency2.to=StationemVigilum
+dependency2.to=MedischCentrum
 dependency2.type=UsesDependency
 dependency3.from=Downtown
-dependency3.to=EstacioCentral
+dependency3.to=StationemVigilum
 dependency3.type=UsesDependency
-dependency4.from=EstacioCentral
-dependency4.to=Downtown
+dependency4.from=Downtown
+dependency4.to=EstacioCentral
 dependency4.type=UsesDependency
 objectbench.height=94
 objectbench.width=1342

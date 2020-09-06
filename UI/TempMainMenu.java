@@ -65,18 +65,25 @@ public class TempMainMenu {
         Scene.choice(new String[]{"DELETE SAVE","CHECK VERSION","GO BACK"});
         int choice = Input.Int();
         if(choice==1) {
-            Print.textln("Type 'RESET' if you're 101% sure you want to reset the game.\nRemember, you'll lose all your progress & achievements. This cannot be undone.");
-            String str=Input.String();
-            if(str.toLowerCase().contains("reset")){
-                Save.delete();
-                Thread.sleep(1000);
-                Print.textln("Your game is now deleted. It's gone like Unus Annus");
-                Thread.sleep(1500);
-                settings();
+            if (Save.SaveExists()) {
+                Print.textln("Type 'RESET' if you're 101% sure you want to reset the game.\nRemember, you'll lose all your progress & achievements. This cannot be undone.");
+                String str=Input.String();
+                if(str.toLowerCase().contains("reset")){
+                    Save.delete();
+                    Thread.sleep(1000);
+                    Print.textln("Your game is now deleted. It's gone like Unus Annus");
+                    Thread.sleep(1500);
+                    settings();
+                }
+                else{
+                    Print.error("Invalid Input");
+                    Thread.sleep(1000);
+                    settings();
+                }
             }
             else{
-                Print.error("Invalid Input");
-                Thread.sleep(1000);
+                Print.textln("No Saved File exists.");
+                Thread.sleep(1500);
                 settings();
             }
         }

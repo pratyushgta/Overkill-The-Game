@@ -17,6 +17,7 @@ public class GunPoint1 //rip-off of Ammu Nation
         options();
         Thread.sleep(1000);
         Print.textln("Seeya soon! We're always ready for your calls of duty!");
+        NorthZone.main(new String[]{});
     }
 
     private static void options() throws IOException, InterruptedException {
@@ -396,7 +397,7 @@ public class GunPoint1 //rip-off of Ammu Nation
             Print.textln("Weapon Purchased");
             Stats.money-=170;
             Thread.sleep(1500);
-           options();
+            options();
         }
         else if(choice==3){
             Thread.sleep(800);

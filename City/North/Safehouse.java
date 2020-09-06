@@ -1,6 +1,7 @@
 package City.North;
 import Overkill_Engine.*;
 import Backend.Stats;
+import UI.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,6 +40,10 @@ public class Safehouse {
             choice=Input.Int();
             if(choice==1)
                 savegame();
+            else if(choice==2)
+                TempMainMenu.main(new String[]{});
+            else
+                options();
         }
         else if(choice==5){
             Thread.sleep(1500);
@@ -88,11 +93,28 @@ public class Safehouse {
     }
 
     private static void savegame() throws InterruptedException, IOException {
-        Stats.writeToSave();
-        Print.textln("The game has been saved");
-        Thread.sleep(1000);
-        options();
+        if(Save.SaveExists()){
+            Print.textln("An earlier save already exists.\nPress [1] if you would like to overwrite the already saved file. Otherwise press any key to go back.");
+            int ch=Input.Int();
+            if(ch==1){
+                Save.delete();
+                Stats.writeToSave();
+                Print.textln("The game has been saved");
+                Thread.sleep(1000);
+                options();
+            }
+            else{
+                options();
+            }
+        }
+        else{
+            Stats.writeToSave();
+            Print.textln("The game has been saved");
+            Thread.sleep(1000);
+            options();
+        }
     }
+
     public static void main(String[] args) throws IOException, InterruptedException {
         exec1();
     }
