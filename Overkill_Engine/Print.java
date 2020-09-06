@@ -1,4 +1,6 @@
 package Overkill_Engine;
+
+
 /**
  * This class contains all methods regarding printing and outputting simple single line text and patterns.
  *
@@ -56,6 +58,23 @@ public class Print
         Print.textln(headerText.toUpperCase().trim());
         Print.lineln(headerLineMaker,headerText.length());
         Print.textln();
+    }
+    public static void header(String headerText){
+        Print.textln();
+        Print.lineln("-",headerText.length());
+        Print.textln(headerText.toUpperCase().trim());
+        Print.lineln("-",headerText.length());
+        Print.textln();
+    }
+    public static String chooseRandom(String[] texts){
+        int random=(int)(Math.random()*texts.length+1);
+        return texts[random];
+    }
+    public static void random(String[] texts){
+         text(chooseRandom(texts));
+    }
+    public static void randomln(String[] texts){
+        textln(chooseRandom(texts));
     }
     public static void error(String error_message){
 

@@ -26,16 +26,16 @@ public class Scene
             Print.textln(choicePrompt+"\n");
         }
         if(showMoney){
-            Print.textln("You have $"+money+"\n");
+            Print.textln("You have $"+money);
         }
         if(showHP){
-            Print.textln("Your HP: "+HP+"\n");
+            Print.textln("Your HP: "+HP);
         }
         if(showWeapon){
-            Print.textln("Your weapon: "+weapon+"\n");
+            Print.textln("Your weapon: "+weapon);
         }
         if(showWanted){
-            Print.textln((wanted)?"Wanted status: You are wanted":"Wanted status: You are not in the wanted list\n");
+            Print.textln((wanted)?"Wanted status: You are wanted":"Wanted status: You are not in the wanted list");
         }
         if(showTime){
             Print.textln("The time is "+time);

@@ -135,11 +135,13 @@ public class Save {
     public static void setWanted(boolean wanted) throws IOException {
         String[] oldSave=Save.read();
         PrintWriter file = new PrintWriter("SaveFile.txt");
-        for (int j = 0; j < 5; j++) {
+        for (int j = 0; j < 4; j++) {
             file.println(oldSave[j]);
         }
-        for(int i = 6;i<=oldSave.length-1;i++)
+        file.println(wanted);
+        for (int i = 5; i < 7; i++) {
             file.println(oldSave[i]);
+        }
         file.close();
     }
     public static void setTime(int[] time) throws IOException {

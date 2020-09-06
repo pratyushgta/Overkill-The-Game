@@ -72,13 +72,12 @@ public class TempMainMenu {
                 Thread.sleep(1000);
                 Print.textln("Your game is now deleted. It's gone like Unus Annus");
                 Thread.sleep(1500);
-                settings();
             }
             else{
                 Print.error("Invalid Input");
                 Thread.sleep(1000);
-                settings();
             }
+            settings();
         }
         else if(choice==2){
             Print.textln("Game Version: September Update 1 | v0.0.5 Developement Build");

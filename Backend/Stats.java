@@ -11,7 +11,7 @@ public class Stats {
     public static boolean wanted=false;
     public static String weapon="Fists";
     public static int[] time={12,0};
-    public static String labels;
+    public static String labels="";
     public static void loadFromSave() throws IOException {
         name=Save.getName();
         HP=Save.getHP();
