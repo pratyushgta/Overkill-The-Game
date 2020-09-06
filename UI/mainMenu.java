@@ -12,23 +12,30 @@ import java.io.*;
 
 /**
  * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
- * Version: 0.0.5 Developement Build: September Update 
+ * Version: 0.0.5 Development Build: September Update
  */
 public class mainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  {
-        Print.header("OVERKILL","~-");
-        Scene.choice(new String[]{"PLAY","SETTINGS","CREDITS","QUIT GAME"});
-        int choice = Input.Int();
-        if(choice==1)
-            play();
-        else if(choice==2)
-            settings();
-        else if(choice==3)
-            credits();
-        else if(choice==4)
-            System.exit(0);
-        else
-            main(new String[]{});
+        while(true) {
+            Print.header("OVERKILL","~-");
+            Scene.choice(new String[]{"PLAY","SETTINGS","CREDITS","QUIT GAME"});
+            int choice = Input.Int();
+            if (choice == 1)
+                play();
+            else if (choice == 2)
+                settings();
+            else if (choice == 3)
+                credits();
+            else if (choice == 4)
+                break;
+            else {
+                Print.randomln(new String[]{"Your input seems to be incorrect. You have been given another chance to try again",
+                        "The choice is between a few numbers, I thought you were smart enough to understand that",
+                        "The Game: *Gives choice between a few simple natural numbers*\nThe Stupid User: *Enters some number out of range*"});
+                main(new String[]{});
+            }
+        }
+        System.exit(0);
     }
 
     private static void play() throws IOException, InterruptedException {
@@ -50,7 +57,7 @@ public class mainMenu {
                 Safehouse.main(new String[]{});
             }
             else{
-                Print.error("Save file does not exist. Starting a new game instead");
+                Print.error("Save file does not exist or has been tampered with. Starting a new game instead");
                 Thread.sleep(2000);
                 Save.make();
                 OKTown.main(new String[]{});
@@ -61,7 +68,7 @@ public class mainMenu {
 
     private static void settings() throws IOException, InterruptedException {
         Scene.clear();
-        Print.header("SETTINGS","-");
+        Print.header("SETTINGS");
         Scene.choice(new String[]{"DELETE SAVE","CHECK VERSION","GO BACK"});
         int choice = Input.Int();
         if(choice==1) {
@@ -86,18 +93,38 @@ public class mainMenu {
                 Thread.sleep(1500);
                 settings();
             }
+            settings();
         }
         else if(choice==2){
-            Print.textln("Game Version: September Update 1 | v0.0.5 Developement Build");
+            Print.header("Game Version: September Update 1 | v0.0.5 Development Build");
             Thread.sleep(2000);
             settings();
         }
-        else{
+        else if(choice==3) {
             Scene.clear();
             main(new String[]{});
         }
+        else{
+            Print.randomln(new String[]{"Your input seems to be incorrect. You have been given another chance to try again",
+                    "The choice is between a few numbers, I thought you were smart enough to understand that",
+                    "Choice = simple.\nYou = stupid."});
+            settings();
+        }
     }
 
-    private static void credits(){}//credits here.
+    private static void credits() throws InterruptedException, IOException {    //credits here.
+        Thread.sleep(2000);
+        Print.header("OVERKILL: We don't know what's too much","~-");
+        Print.textln("\nA passion project by Pratyush Kumar and Rahil Shaban\n");
+        Thread.sleep(2000);
+        Print.textln("CREATIVE DIRECTOR\nPratyush Kumar\n");
+        Thread.sleep(2000);
+        Print.textln("PROGRAMMERS\nPratyush Kumar\nRahil Shaban\n");
+        Thread.sleep(2000);
+        Print.textln("JAVA IDEs USED FOR DEVELOPMENT\nJetBrains IntelliJ IDEA\nBlueJ\n");
+        Thread.sleep(2000);
+        Print.textln("Thanks to GitHub for their services");
+        mainMenu.main(new String[]{});
+    }
 }
 

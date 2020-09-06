@@ -86,6 +86,7 @@ public class TempMainMenu {
                 Thread.sleep(1500);
                 settings();
             }
+            settings();
         }
         else if(choice==2){
             Print.textln("Game Version: September Update 1 | v0.0.5 Developement Build");

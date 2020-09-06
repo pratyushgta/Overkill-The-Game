@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * This class contains methods to allow you to quickly test various features of the game.
  * Click on Run class to play the game.
- * Since the game is still in development, various features might not function as intented.
+ * Since the game is still in development, various features might not function as intended.
  */
 public class OKTown{
     private static void options() throws InterruptedException, IOException { //First time main run method of LuckyBucky
