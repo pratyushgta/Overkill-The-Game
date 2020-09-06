@@ -14,7 +14,7 @@ import java.io.*;
  * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
  * Version: 0.0.5 Developement Build: September Update 
  */
-public class mainMenu {
+public class TempMainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  {
         Print.header("OVERKILL","~-");
         Scene.choice(new String[]{"PLAY","SETTINGS","CREDITS","QUIT GAME"});
@@ -40,7 +40,7 @@ public class mainMenu {
             if(Save.SaveExists())
                 Save.delete();
             Save.make();
-            OKTown.main(new String[]{});
+            OKTownStd.main(new String[]{});
         }
         else if(choice==2) {
             if (Save.SaveExists()) {
@@ -53,10 +53,10 @@ public class mainMenu {
                 Print.error("Save file does not exist. Starting a new game instead");
                 Thread.sleep(2000);
                 Save.make();
-                OKTown.main(new String[]{});
+                OKTownStd.main(new String[]{});
             }
         }
-        mainMenu.main(new String[]{});
+        TempMainMenu.main(new String[]{});
     }
 
     private static void settings() throws IOException, InterruptedException {

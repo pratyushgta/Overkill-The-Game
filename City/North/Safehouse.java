@@ -1,4 +1,4 @@
-package Buildings;
+package City.North;
 import Overkill_Engine.*;
 import Backend.Stats;
 import java.io.BufferedReader;
@@ -18,7 +18,7 @@ public class Safehouse {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu"});
+        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu","Go Back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -39,6 +39,9 @@ public class Safehouse {
             choice=Input.Int();
             if(choice==1)
                 savegame();
+        }
+        else if(choice==5){
+            Thread.sleep(1500);
         }
         else{
             Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old receptionist.");
