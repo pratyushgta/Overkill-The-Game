@@ -4,5 +4,3 @@ default_player
 Fists
 false
 12:00
-
-

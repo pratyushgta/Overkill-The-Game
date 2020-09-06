@@ -11,6 +11,7 @@ import City.West.*;
 
 public class NorthMetro {
     private static void exec1() throws InterruptedException, IOException { 
+        Scene.clear();
         Scene.make("Town Metro","Going places, together.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000); 
         options();
@@ -20,7 +21,7 @@ public class NorthMetro {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.clear();
+
         Print.header("North Line",">");
         Print.textln("Welcome to North Point Station. Where would you like to travel to?");
         Thread.sleep(1000);

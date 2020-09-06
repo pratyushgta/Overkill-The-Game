@@ -8,6 +8,7 @@ import java.io.*;
 
 public class EastZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
+        Scene.clear();
         Print.header("EAST HILLS","*");
         Scene.choice(new String[]{"RaceCon","GunPoint","East Hills Metro"});
         int choice = Input.Int();

@@ -8,6 +8,7 @@ import java.io.*;
 
 public class Downtown{
     public static void main(String[] args) throws IOException, InterruptedException  {
+        Scene.clear();
         Print.header("DOWNTOWN","*");
         Scene.choice(new String[]{"Death Valley Health Center","Flippin Sheriff Station","Central Station"});
         int choice = Input.Int();

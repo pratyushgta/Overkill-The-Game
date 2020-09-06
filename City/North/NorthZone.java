@@ -8,6 +8,7 @@ import java.io.*;
 
 public class NorthZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
+        Scene.clear();
         Print.header("NORTH ZONE","*");
         Scene.choice(new String[]{"Safehouse","Geogrge's Grubs","NorthZone Metro"});
         int choice = Input.Int();
@@ -17,9 +18,11 @@ public class NorthZone {
         }
         else if(choice==2){
             GunPoint1.main(new String[]{});
+            main(new String[]{});
         }
         else if(choice==3){
             NorthMetro.main(new String[]{});
+            main(new String[]{});
         }
         else{
             main(new String[]{});

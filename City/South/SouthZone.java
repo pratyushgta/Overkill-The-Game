@@ -8,8 +8,9 @@ import java.io.*;
 
 public class SouthZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
+        Scene.clear();
         Print.header("PARTY ISLAND","*");
-        Scene.choice(new String[]{"Fishing","George's Grubs Diner","Party Island Metro"});
+        Scene.choice(new String[]{"Lucky Bucky","George's Grubs Diner","Party Island Metro"});
         int choice = Input.Int();
         if(choice==1){
             LuckyBucky.main(new String[]{});
