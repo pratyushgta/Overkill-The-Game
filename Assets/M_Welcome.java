@@ -1,7 +1,6 @@
 package Assets;
 import Overkill_Engine.*;
-import Backend.Stats;
-import Backend.Tags;
+import Backend.*;
 import java.io.IOException;
 import City.North.*;
 /**
@@ -18,7 +17,7 @@ public class M_Welcome{
         Thread.sleep(4000);
         Print.textln("You:  Whooh yeah! Here she is...OKCity.");
         Thread.sleep(3500);
-        Print.textln("Dave: Crazy place, <PLAYER NAME>");
+        Print.textln("Dave: Crazy place, "+Stats.name);
         Thread.sleep(3500);
         Print.textln("You: You must be here since long...");
         Thread.sleep(4000);
