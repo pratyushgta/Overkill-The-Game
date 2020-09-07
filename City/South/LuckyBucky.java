@@ -275,6 +275,7 @@ public class LuckyBucky {
         else{
             Print.textln("looks like you are going to have to go back empty handed, haha!");
         }
+        options();
     }
 
     private static void guess(String str, int num, int prize) throws InterruptedException {

@@ -1,21 +1,20 @@
 package UI;
-
 import Assets.*;
 import Backend.Stats;
-import Buildings.*;
+import City.North.*;
 import Overkill_Engine.Input;
 import Overkill_Engine.Print;
 import Overkill_Engine.Save;
 import Overkill_Engine.Scene;
-
 import java.io.*;
 
 /**
  * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
- * Version: 0.0.5 Development Build: September Update
+ * Version: 0.0.5 Developement Build: September Update 
  */
 public class mainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  {
+        Scene.clear();
         while(true) {
             Print.header("OVERKILL","~-");
             Scene.choice(new String[]{"PLAY","SETTINGS","CREDITS","QUIT GAME"});
@@ -41,13 +40,13 @@ public class mainMenu {
     private static void play() throws IOException, InterruptedException {
         Scene.clear();
         Print.header("PLAY","-");
-        Scene.choice(new String[]{"START A NEW ADVENTURE","LOAD GAME","GO BACK"});
+        Scene.choice(new String[]{"START A NEW ADVENTURE","LOAD GAME","GO BACK","QUICK START"});
         int choice = Input.Int();
         if(choice==1) {
             if(Save.SaveExists())
                 Save.delete();
             Save.make();
-            OKTown.main(new String[]{});
+            Introduction.main(new String[]{});
         }
         else if(choice==2) {
             if (Save.SaveExists()) {
@@ -60,10 +59,15 @@ public class mainMenu {
                 Print.error("Save file does not exist or has been tampered with. Starting a new game instead");
                 Thread.sleep(2000);
                 Save.make();
-                OKTown.main(new String[]{});
+                Introduction.main(new String[]{});
             }
         }
-        mainMenu.main(new String[]{});
+        else if(choice==4) {
+            OKTown.main(new String[]{});
+        }
+        else{
+            mainMenu.main(new String[]{});
+        }
     }
 
     private static void settings() throws IOException, InterruptedException {
@@ -97,7 +101,7 @@ public class mainMenu {
         }
         else if(choice==2){
             Print.header("Game Version: September Update 1 | v0.0.5 Development Build");
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             settings();
         }
         else if(choice==3) {
@@ -119,6 +123,8 @@ public class mainMenu {
         Thread.sleep(2000);
         Print.textln("CREATIVE DIRECTOR\nPratyush Kumar\n");
         Thread.sleep(2000);
+        Print.textln("OVERKILL ENGINE HANDCRAFTED BY\nRahil Shaban\n");
+        Thread.sleep(2000);
         Print.textln("PROGRAMMERS\nPratyush Kumar\nRahil Shaban\n");
         Thread.sleep(2000);
         Print.textln("JAVA IDEs USED FOR DEVELOPMENT\nJetBrains IntelliJ IDEA\nBlueJ\n");
@@ -127,4 +133,3 @@ public class mainMenu {
         mainMenu.main(new String[]{});
     }
 }
-
