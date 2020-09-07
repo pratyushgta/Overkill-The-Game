@@ -10,7 +10,7 @@ import java.io.*;
 
 /**
  * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
- * Version: 0.0.5 Developement Build: September Update 
+ * Version: 0.0.7 Developement Build: September Update 
  */
 public class mainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  {
@@ -100,7 +100,7 @@ public class mainMenu {
             settings();
         }
         else if(choice==2){
-            Print.header("Game Version: September Update 1 | v0.0.5 Development Build");
+            Print.header("Game Version: September Update 2 | v0.0.7 Development Build");
             Thread.sleep(3000);
             settings();
         }
