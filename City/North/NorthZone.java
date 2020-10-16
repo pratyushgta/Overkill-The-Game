@@ -10,7 +10,7 @@ public class NorthZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
         Scene.clear();
         Print.header("NORTH ZONE","*");
-        Scene.choice(new String[]{"Safehouse","Geogrge's Grubs","NorthZone Metro"});
+        Scene.choice(new String[]{"Safehouse","Gun Point","NorthZone Metro"});
         int choice = Input.Int();
         if(choice==1){
             Safehouse.main(new String[]{});

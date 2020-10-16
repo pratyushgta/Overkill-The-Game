@@ -12,11 +12,12 @@ public class GunPoint1 //rip-off of Ammu Nation
         Scene.make("Gun Point","The OG gun shop.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         System.out.println();
-        Print.textln("Albert:\nWelcome back homie....\nWhich type of weapon are you lookin' for, today?");
+        Print.textln("Albert:\nWelcome back homie....\nWhich weapon are you lookin' for, today?");
         Thread.sleep(1500);
         options();
-        Thread.sleep(1000);
-        Print.textln("Seeya soon! We're always ready for your calls of duty!");
+        Thread.sleep(800);
+        Print.textln("Adios! We're always ready for your calls of duty!");
+        Thread.sleep(1600);
         NorthZone.main(new String[]{});
     }
 
@@ -26,7 +27,7 @@ public class GunPoint1 //rip-off of Ammu Nation
         Scene.choice(new String[]{"Melee & Handguns","Assault Rifles","Machine Guns","Snipers & Shotguns","Exit"});
         Print.textln("Response:");
         int choice=Input.Int();
-        if(choice==1){
+        if(choice==1){      
             Thread.sleep(1500);
             Print.textln("Okie dokie...lemme pull out the catalogue");
             Thread.sleep(2000);
@@ -53,11 +54,8 @@ public class GunPoint1 //rip-off of Ammu Nation
         else if(choice==5){
         }
         else{
-            Print.textln("Ayyyy youu...c'mon! Don't waste ma time");
+            Print.textln("I don't have time for this, seriously. I have guns to smuggle..");
             Thread.sleep(1500);
-            Print.textln("There are others who are waiting to die...");
-            Thread.sleep(1500);
-            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old receptionist.");
             options();
         }
     }
@@ -103,8 +101,13 @@ public class GunPoint1 //rip-off of Ammu Nation
             else if(choice==3){
                 NonLethalWeapons();
             }
+            else if(choice>3){
+                System.out.println("Do you not understand simple numbers?\nThis option doesn't even exists.");
+                Thread.sleep(1500);
+                NonLethalWeapons();
+            }
             else{
-                Print.error("You can't buy that!");
+                Print.error("You don't have enough buckies to but that!");
                 Thread.sleep(1000);
                 NonLethalWeapons();
             }
@@ -147,6 +150,11 @@ public class GunPoint1 //rip-off of Ammu Nation
             else if(choice==3){
                 NonLethalWeapons();
             }
+            else if(choice>3){
+                System.out.println("eesh..you just had to choose between 3 numbers\nIt was that simple!");
+                Thread.sleep(1500);
+                NonLethalWeapons();
+            }
             else{
                 Print.error("You can't buy that!");
                 Thread.sleep(1000);
@@ -183,6 +191,11 @@ public class GunPoint1 //rip-off of Ammu Nation
                 NonLethalWeapons();
             }
             else if(choice==3){
+                NonLethalWeapons();
+            }
+            else if(choice>3){
+                System.out.println("Uff...this option doesn't even exists...");
+                Thread.sleep(1500);
                 NonLethalWeapons();
             }
             else{
@@ -263,6 +276,11 @@ public class GunPoint1 //rip-off of Ammu Nation
             Thread.sleep(800);
             options();
         }
+        else if(choice>5){
+            Print.error("Do you see option "+choice+" list? No, right! So enter what's been asked for...");
+            Thread.sleep(2000);
+            AssaultRifles();
+        }
         else{
             Print.error("You can't buy that!");
             Thread.sleep(1000);
@@ -311,6 +329,11 @@ public class GunPoint1 //rip-off of Ammu Nation
             else if(choice==3){
                 SMG_LMG();
             }
+            else if(choice>3){
+                System.out.println("I'm afraid this gun doesn't exists...");
+                Thread.sleep(1200);
+                SMG_LMG();
+            }
             else{
                 Print.error("You can't buy that!");
                 Thread.sleep(1000);
@@ -347,6 +370,11 @@ public class GunPoint1 //rip-off of Ammu Nation
                 SMG_LMG();
             }
             else if(choice==3){
+                SMG_LMG();
+            }
+            else if(choice>3){
+                System.out.println("Making your own guns huh?\nOption "+choice+" doesn't even exists");
+                Thread.sleep(1500);
                 SMG_LMG();
             }
             else{
@@ -402,6 +430,11 @@ public class GunPoint1 //rip-off of Ammu Nation
         else if(choice==3){
             Thread.sleep(800);
             options();
+        }
+        else if(choice>3){
+            System.out.println("Are you dumb? Or studid? or idiot? or an all-in-one package?\nOption "+choice+" doesn't even exists");
+            Thread.sleep(1500);
+            Sniper_Shot();
         }
         else{
             Print.error("You can't buy that!");

@@ -21,12 +21,12 @@ public class Safehouse {
             options();
         }
         Print.textln("See ya");
-        Thread.sleep(1500);
+        Thread.sleep(1000);
         Scene.clear();
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu","Exit to North Zone"});
+        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu","Exit Safehouse"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -46,6 +46,8 @@ public class Safehouse {
             Scene.choice(new String[]{"Save and Quit","Quit without saving","Go Back"});
             choice=Input.Int();
             if(choice==1){
+                if(Stats.wanted==true)
+                    Stats.wanted=false;
                 savegame();
                 mainMenu.main(new String[]{});
             }
@@ -55,16 +57,17 @@ public class Safehouse {
                 options();
         }
         else if(choice==5){
-            Thread.sleep(1500);
+            NorthZone.main(new String[]{});
         }
         else{
-            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old receptionist.");
+            Print.textln("What were you even thinking huh?..that's not a valid option from the list...");
             options();
         }
     }
 
     private static void rest() throws InterruptedException, IOException {
-
+        if(Stats.wanted==true)
+            Stats.wanted=false;
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
         Print.textln("ZZZzzzzzzzzz");
@@ -75,19 +78,18 @@ public class Safehouse {
         Thread.sleep(1500);
         Print.textln("Yay! You are now as fresh as a daisy!");
         Thread.sleep(1500);
-        Print.text("Blabber something real quick.. : ");
+        Print.text("C'mon..Blabber something real quick.. : ");
         Thread.sleep(1000);
         br.readLine();
         Stats.HP=100;
         options();
-
     }
 
     private static void playerstats() throws InterruptedException, IOException {
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
         Print.lineln("-",20);
-        Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour Hp: "+Stats.HP+"\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
+        Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour Hp: "+Stats.HP+"\nGF: None..just like you don't have one in real life\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
         if(!Stats.wanted){
             Print.textln("Wanted Status: You are not on the wanted list");
         }
@@ -103,14 +105,8 @@ public class Safehouse {
 
     private static void savegame() throws InterruptedException, IOException {
         Stats.writeToSave();
-        Print.textln("The game has been saved");
+        Print.textln("Your progress has been saved");
         Thread.sleep(1000);
-        /*Scene.choice(new String[]{"Quit Game","Resume Game"});
-        int choice=Input.Int();
-        if(choice==1)
-        mainMenu.main(new String[]{});
-        else*/
-        options();
     }
 
     private static void introduction() throws IOException, InterruptedException {

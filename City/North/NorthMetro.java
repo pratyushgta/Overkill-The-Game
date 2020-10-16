@@ -25,22 +25,26 @@ public class NorthMetro {
         Print.header("North Line",">");
         Print.textln("Welcome to North Point Station. Where would you like to travel to?");
         Thread.sleep(1000);
-        Scene.choice(new String[]{"Downtown","South: Party Island","East Hills","West Bank","Go Back"});
+        Scene.choice(new String[]{"Downtown\t\t$2","South: Party Island\t$8","East Hills\t\t$5","West Bank\t\t$5","Go Back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
+            Stats.money-=2;
             Downtown.main(new String[]{});
         }
         else if(choice==2){
             Thread.sleep(1500);
+            Stats.money-=8;
             SouthZone.main(new String[]{});
         }
         else if(choice==3){
             Thread.sleep(1500);
+            Stats.money-=5;
             EastZone.main(new String[]{});
         }
         else if(choice==4){
+            Stats.money-=5;
             Thread.sleep(1500);
             WestZone.main(new String[]{});
         }  

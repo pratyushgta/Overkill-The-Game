@@ -13,9 +13,9 @@ import java.io.*;
  * Version: 0.0.7 Developement Build: September Update 
  */
 public class mainMenu {
-    public static void main(String[] args) throws IOException, InterruptedException  {
-        Scene.clear();
+    public static void main(String[] args) throws IOException, InterruptedException  { 
         while(true) {
+            Scene.clear();
             Print.header("OVERKILL","~-");
             Scene.choice(new String[]{"PLAY","SETTINGS","CREDITS","QUIT GAME"});
             int choice = Input.Int();

@@ -2,6 +2,7 @@ package City.Downtown;
 import Overkill_Engine.*;
 import Backend.Stats;
 import java.io.IOException;
+import java.util.*;
 
 public class StationemVigilum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
@@ -29,7 +30,7 @@ public class StationemVigilum //Yeah...we made it super difficult for you to und
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
-            Print.textln("You could have literally turned on the TV to view the crimes...");
+            Print.textln("Ahhh...this city is filled with more criminals than the hairs on your head...");
             Thread.sleep(1000);
             CurrentCrimes();
         }
@@ -43,50 +44,143 @@ public class StationemVigilum //Yeah...we made it super difficult for you to und
             Thread.sleep(1500);
             Print.textln("A'ight....lemme pull out the list real quick..");
             Thread.sleep(1000);
-            MostWanted();
+            int tag=0;
+            MostWanted(tag);
         }
         else if(choice==4){
         }
         else{
-            Print.textln("Ayyyy youu...c'mon! Don't waste ma time");
+            Print.textln("Really? You thought there's really an option "+choice+" ?");
             Thread.sleep(1500);
-            Print.textln("There are others who are waiting to die...");
+            Print.textln("Do that again and I'll arrest you for wastin' ma thime...");
             Thread.sleep(1500);
-            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old receptionist.");
             options();
         }
     }
 
-    private static void MostWanted() throws IOException, InterruptedException {
-        Print.textln();
-        Print.textln("Officer Kelly:\nOkie-Dokie...so these are the 'heroes' of our town....");
-        Thread.sleep(1500);
-        String[]peoplelist={"Raju","Golu","Bheem"};
-        String[]crime={"Theft","Theft","Theft"};
-        Print.textln();
-        Print.lineln("-",25);
-        Print.textln("NAME\t\tCrime");
-        Print.lineln("-",25);
-        for(int i=0;i<peoplelist.length;i++)
-        {
-            Print.textln(peoplelist[i]+"\t\t"+crime[i]);
+    private static void MostWanted(int addtag) throws IOException, InterruptedException {
+        String[]peoplelist={"Mark Panzee","Ella Vermeylen","Dimitri Rascolov","Stuart Bloom","Raju Singh","Aunt Funnypants"};
+        String[]crime={"Terrorist","Murder","Drug Lord","Robbed Comic Book Store","Indian Scammer","Mass Killings"};
+        String []newpeoplelist;
+        String []newcrime;
+        if(addtag==0){
+            Print.textln();
+            Print.textln("Officer Kelly:\nOkie-Dokie...so these are the 'heroes' of our town....");
+            Thread.sleep(1500);
+            Print.textln();
+            Print.lineln("-",25);
+            Print.textln("NAME\t\t\tCrime");
+            Print.lineln("-",25);
+            for(int i=0;i<peoplelist.length;i++)
+            {
+                Print.textln(peoplelist[i]+"\t\t\t"+crime[i]);
+            }
+            Thread.sleep(1500);
+            Print.textln();
+            Print.textln("Officer Kelly: Are you done gazing at the list?");
+            Print.text("Respond: ");
+            Input.String();
+            options();
         }
-        Thread.sleep(1500);
-        Print.textln();
-        Print.textln("Officer Kelly: Are you done gazing at the list?");
-        Print.textln("Respond: ");
-        Input.String();
-        options();
-    }
+        else
+        {
+            int add=0;
+
+            if(add>0)
+            {
+                newpeoplelist=new String[add];
+                newcrime=new String[add];
+            }
+            else
+            {
+                newpeoplelist=new String[peoplelist.length+1];
+                newcrime=new String[crime.length+1];
+            }
+
+            System.out.println("Officer Kelly: Okay...do you suspect someone? If yes, write the name down... ");
+            Print.text("Respond: ");
+            String criminalName=Input.String();
+            Thread.sleep(1000);
+            StringTokenizer st=new StringTokenizer(criminalName);
+            int count=st.countTokens();
+            if(count>2||criminalName.toLowerCase().contains("no")||criminalName.toLowerCase().contains("none"))
+            {
+                System.out.println("Officer Kelly: Okay..Cool!"); 
+                criminalName="Unknown Persons";
+                Thread.sleep(1000);
+            }
+
+            System.out.println("Officer Kelly: Explain their crime in a word..!"); 
+            Print.text("Respond: ");
+            String newCrime=Input.String();
+            Thread.sleep(1000);
+            int len=peoplelist.length;
+
+            String temp1[]=new String[len];
+            String temp2[]=new String[len];
+
+            for(int i=0;i<temp1.length;i++)
+            {
+                temp1[i]=peoplelist[i];
+                temp2[i]=crime[i];
+            }
+            peoplelist=new String[len+1];
+            crime=new String[len+1];
+            for(int i=0;i<temp1.length;i++)
+            {
+                peoplelist[i]=temp1[i];
+                crime[i]= temp2[i];
+            }
+            peoplelist[len]=criminalName;
+            crime[len]=newCrime;
+            /*for(int i=0;i<peoplelist.length;i++)
+            {
+            Print.textln(peoplelist[i]+"\t\t\t"+crime[i]);
+            }*/
+            System.out.println("Officer Kelly: Thank You for your inputs. We'll kick  the arse of the accused once we find em'"); 
+            Print.text("Respond: ");
+            Input.String();
+            Thread.sleep(1000);
+            //addtag=0;
+            options();
+        }
+    } 
 
     private static void CurrentCrimes() throws IOException, InterruptedException {
         Print.textln();
-        Print.textln("Officer Kelly: No crimes have been reported yet..");
-        Print.textln("Respond: ");
-        Input.String();
-        Thread.sleep(1000);
-        options();
-    }
+        String currentCrimes="";
+        String report=""; 
+        if(currentCrimes.equals(""))
+        {
+            Print.textln("Officer Kelly: No crimes have been reported yet..");
+            Print.text("Respond: ");
+            Input.String();
+            Thread.sleep(1000);
+            Print.textln("Officer Kelly: Would you like to report a new crime? [Type yes or no]");
+            Print.text("Respond: ");
+            String choice=Input.String();
+            if(choice.toLowerCase().contains("yes")){
+                System.out.println("Officer Kelly: You'll have tell me everything...what? where? how? when?");
+                Thread.sleep(1500);
+                System.out.println("Officer Kelly: So..describe the crime..");
+                Print.text("Respond: ");
+                report=Input.String();
+                Thread.sleep(1500);
+                System.out.println("Officer Kelly: Gotcha! When and where did this incident exactly happen?");
+                Print.text("Respond: ");
+                Input.String();
+                Thread.sleep(1000);
+                int tag=1;
+                MostWanted(tag);
+            }
+            else
+            {
+                System.out.println("Officer Kelly: Go away now. Comeback when you really have some 'work'");
+                Thread.sleep(1500);
+                options();
+            }
+        }
+    } 
 
     private static void SearchRecords() throws IOException, InterruptedException {
         Print.textln();
