@@ -8,15 +8,16 @@ import java.util.Random;
 
 public class RaceCon {
     private static void exec1() throws InterruptedException, IOException { //First time main run method of Racecourse
-        Scene.make("RaceCon","Just because we couldn't fit a Sports Stadium, we made RaceCon! Welcome to the world of Racing Drama!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
+        Scene.make("RaceCon","Just because we couldn't fit a Sports Stadium, we made RaceCon! Welcome to the world of Racing Drama!",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
-        Print.textln("\nCowBoy Codey:\n**DIALOGUE**!");
+        Print.textln("\nCowBoy Codey: Yo..wanna ride muy beast?");
         Thread.sleep(1500);
-        Print.textln("I now present to you a new game mode! Only available in OKTown.");
+        Print.textln("Its the finest jackass in town...");
         Thread.sleep(2000);
         options();
         Thread.sleep(1000);
-        Print.textln("Thank you for coming here! I hope to see you again soon!");
+        Print.textln("Neeeiiighhhh...Whinny....Gudbuy!");
+        Thread.sleep(1500);
     }
 
     private static void options() throws IOException, InterruptedException {
@@ -57,42 +58,43 @@ public class RaceCon {
         else if(choice==3){
         }
         else{
-            Print.textln("You... naughty, naughty bi... person!");
+            Print.textln("You thought bug-finding was this easy?");
             Thread.sleep(1500);
-            Print.textln("You know this is a software after all...");
+            Print.textln("Jokes on you...");
             Thread.sleep(1500);
-            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old man.");
+            Print.textln("We know you nerdies very well...now come on...enter what is there in the list...");
+            Thread.sleep(2500);
             options();
         }
     }
 
     private static void horseList() throws InterruptedException {
         System.out.println();
-        Print.textln("CowBoy Codey:\n**DIALOGUE**");
+        Print.textln("CowBoy Codey: Yeeehhaaawwwwww! Which horse would you place your bet on?");
         Print.textln();
         Thread.sleep(2500);
         Print.lineln("-",20);
-        Print.textln("Horse 1: Red Raptor\nRaces Won: 18\nStrength: \nRemarks: ");
+        Print.textln("Horse 1: Red Raptor\nRaces Won: 18\nStrength: \nRemarks: Often found wandering around the stable yard");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
         Print.lineln("-",20);
-        Print.textln("Horse 2: EuroStar Unicorn\nRaces Won: 9\nStrength: \nRemarks: ");
+        Print.textln("Horse 2: EuroStar Unicorn\nRaces Won: 9\nStrength: \nRemarks: As crap as the EuroStart itself");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
         Print.lineln("-",20);
-        Print.textln("Horse 3: Blue Bandit\nRaces Won: 22\nStrength: \nRemarks: ");
+        Print.textln("Horse 3: Blue Bandit\nRaces Won: 22\nStrength: \nRemarks: Roses are red, violets are blue; he rolled in mud. You're welcome");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
         Print.lineln("-",20);
-        Print.textln("Horse 4: Inky Pinky\nRaces Won: 14\nStrength: \nRemarks: ");
+        Print.textln("Horse 4: Inky Pinky\nRaces Won: 14\nStrength: \nRemarks: Inky pinky ponkey, her owner had a donkey");
         Print.line("-",20);
         Print.textln();
         Thread.sleep(1000);
         Print.lineln("-",20);
-        Print.textln("Horse 5: Gold Flake\nRaces Won: 9\nStrength: \nRemarks: ");
+        Print.textln("Horse 5: Gold Flake\nRaces Won: 9\nStrength: \nRemarks: He ain't fat...He just big bone");
         Print.line("-",20);
         Print.textln();
     }
@@ -101,14 +103,14 @@ public class RaceCon {
         String horse;
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         if(ifFirst) {
-            Print.textln("CowBoy Codey:\nChoose a horse to gamble your stakes on!");
+            Print.textln("CowBoy Codey: Yeeehhaaawwwwww! Which horse would you place your stakes on?");
             horseList();
         }
         else
             Print.textln("CowBoyCodey:");
         Thread.sleep(1500);
         Print.textln("Sooo....Spoilt for choices...Aren't you? Choose a horse number you'd like to place your bet on");
-        Print.textln("You can tell me if you wanna exit to back out of this!");
+        Print.textln("You can tell me if you wanna exit to back out of this shit!");
         Print.textln("Response: ");
         horse=Input.String();
         Thread.sleep(1000);
@@ -117,7 +119,7 @@ public class RaceCon {
         }
         while(Integer.parseInt(horse)==0 || Integer.parseInt(horse)>5)
         {
-            Print.textln("You need to enter a horse number from available options");
+            Print.textln("Blind are you? Do you see a horse number "+horse+" in the list?\nRe-enter the correct choice...");
             Print.textln("Response: ");
             horse=Input.String();
         }
@@ -128,7 +130,7 @@ public class RaceCon {
         double bet=Input.Double();
         Thread.sleep(1500);
         if(bet>Stats.money){
-            Print.textln("You should have enough buckies before messing with us bookies!");
+            Print.error("You should have enough buckies before messing with us bookies!");
             Scene.choice(new String[]{"Place a lower bet","Go back"});
             int ch=Input.Int();
             if(ch==1){
@@ -143,7 +145,7 @@ public class RaceCon {
         br.readLine();
         Thread.sleep(1000);
         System.out.println();
-        Print.textln("What a great sunny day here in OKTown,\nI would have been in some beach in Hawaii but here I am serving you rich heads");
+        Print.textln("What a great sunny day here at OKTown,\nI would have been in some beach in Hawaii but here I am serving you rich heads");
         System.out.println();
         Thread.sleep(2500);
         Print.textln("Turn your bull-heads towards the race course because the powerful horses are out of their stables,\nready to rock & roll!");
@@ -156,18 +158,18 @@ public class RaceCon {
         int winhorse=rand.nextInt(6);
         if(winhorse==0)
             winhorse=1;
-        Print.textln("Horse "+winhorse+" has taken the final lead, crossed the end line & won the RaceCon 2020!");
+        Print.textln("Horse "+winhorse+" has taken the final lead, crossed the finish line & has won today's round of RaceCon!");
         Thread.sleep(1500);
 
         if(winhorse==Integer.parseInt(horse))
         {
-            Print.textln("\nYou! Yes You! Just got won the Grand RaceCon Gamble Jackpot!");
+            Print.textln("\nYou! Yes You! Just won the Grand RaceCon Gamble Jackpot!");
             Stats.money+=bet;
             Thread.sleep(1500);  
         }
         else
         {
-            Print.textln("\nYou looooose!");
+            Print.textln("\nYou looooose! Hahahahah");
             Stats.money-=bet;
             Thread.sleep(1500);
         }
@@ -180,9 +182,12 @@ public class RaceCon {
     private static void race() throws InterruptedException, IOException {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         Print.textln("CowBoy Codey:\nI fear you aren't trained to ride a horse, yet.");
-        Print.textln("Go, ride a Unicorn, kid....");
+        Print.textln("Go ride a Unicorn, kid....");
         Print.textln("Respond: ");
         br.readLine();
+        Thread.sleep(1000);
+        Print.textln("**This Game mode is still Under Developement. Check back later ;)");
+        Thread.sleep(2500);
         options();
     }
 

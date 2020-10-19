@@ -23,23 +23,27 @@ public class EastHillsMetro {
         Print.header("Beach Line",">");
         Print.textln("Welcome to East Hills Station. Where would you like to travel to?");
         Thread.sleep(1000);
-        Scene.choice(new String[]{"Downtown","North Point","South: Party Island","West Bank","Go Back"});
+        Scene.choice(new String[]{"Downtown\t\t$2","North Point\t\t$5","South: Party Island\t\t$5","West Bank\t\t$8","Go Back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
+            Stats.money-=2;
             Downtown.main(new String[]{});
         }
         else if(choice==2){
             Thread.sleep(1500);
+            Stats.money-=5;
             NorthZone.main(new String[]{});
         }
         else if(choice==3){
             Thread.sleep(1500);
+            Stats.money-=5;
             SouthZone.main(new String[]{});
         }
         else if(choice==4){
             Thread.sleep(1500);
+            Stats.money-=8;
             WestZone.main(new String[]{});
         }  
         else if(choice==5){

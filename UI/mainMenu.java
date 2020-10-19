@@ -57,7 +57,7 @@ public class mainMenu {
             }
             else{
                 Print.error("Save file does not exist or has been tampered with. Starting a new game instead");
-                Thread.sleep(2000);
+                Thread.sleep(3000);
                 Save.make();
                 Introduction.main(new String[]{});
             }
@@ -79,16 +79,16 @@ public class mainMenu {
             if (Save.SaveExists()) {
                 Print.textln("Type 'RESET' if you're 101% sure you want to reset the game.\nRemember, you'll lose all your progress & achievements. This cannot be undone.");
                 String str=Input.String();
-                if(str.toLowerCase().contains("reset")){
+                if(str.contains("RESET")){
                     Save.delete();
                     Thread.sleep(1000);
-                    Print.textln("Your game is now deleted. It's gone like Unus Annus");
-                    Thread.sleep(1500);
+                    Print.textln("Your saved game is now deleted. It's gone like Unus Annus");
+                    Thread.sleep(2500);
                     settings();
                 }
                 else{
                     Print.error("Invalid Input");
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                     settings();
                 }
             }
@@ -100,8 +100,9 @@ public class mainMenu {
             settings();
         }
         else if(choice==2){
-            Print.header("Game Version: September Update 2 | v0.0.7 Development Build");
-            Thread.sleep(3000);
+            Print.header("Game Version: October Update 1 | v0.0.8 Development Build");
+            Print.header("Click 'Update' under Teamwork settings to check for latest updates!");  
+            Thread.sleep(5000);
             settings();
         }
         else if(choice==3) {
@@ -117,8 +118,10 @@ public class mainMenu {
     }
 
     private static void credits() throws InterruptedException, IOException {    //credits here.
+        Scene.clear();
         Thread.sleep(2000);
         Print.header("OVERKILL: We don't know what's too much","~-");
+        Thread.sleep(1000);
         Print.textln("\nA passion project by Pratyush Kumar and Rahil Shaban\n");
         Thread.sleep(2000);
         Print.textln("CREATIVE DIRECTOR\nPratyush Kumar\n");
@@ -130,6 +133,7 @@ public class mainMenu {
         Print.textln("JAVA IDEs USED FOR DEVELOPMENT\nJetBrains IntelliJ IDEA\nBlueJ\n");
         Thread.sleep(2000);
         Print.textln("Thanks to GitHub for their services");
+        Thread.sleep(2000);
         mainMenu.main(new String[]{});
     }
 }

@@ -9,7 +9,7 @@ import java.util.Random;
 public class MedischCentrum //Yeah...we made it super difficult for you to understand what the class name means lmao
 {
     private static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Death Valley Health Center","The only place where 'positive' means a bad thing.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
+        Scene.make("Death Valley Health Center","The only place where 'positive' is a nightmare.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         if(Stats.HP<=10)
         {
@@ -27,35 +27,35 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Regular Check-Up (Cost: $100; Time: 60 mins)","Emergency/ FastPass Checkout (Cost: $300; Time: 20 mins)","Chit-Chat with Doc(Cost: $50; Time: 30 mins","Go Back"});
+        Scene.choice(new String[]{"Regular Check-Up (Cost: $75; Time: 60 mins)","Emergency (Cost: $169; Time: 20 mins)","Chit-Chat with Doc(Cost: $50; Time: 30 mins","Go Back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
-            if(Stats.money<10)
-                Print.error("I don't think you have enough money for this, mate. Go get some buckies to make some buckies!");
+            if(Stats.money<75)
+                Print.error("This isn't charity. No free healthcare!");
             else {
                 Print.textln("After exiting this room, turn next right, then turn left, then make a sharp left followed by a left again to the lift lobby\nand from there, take the sixth lift to sixteenth floor. Once you reach there, \nturn left, then right, up the stairs to the OPD no.5!");
                 Thread.sleep(8000);
-                Stats.money -= 100;
+                Stats.money -= 75;
                 checkup();
             }
         }
         else if(choice==2){
             Thread.sleep(1200);
-            if(Stats.money<100)
-                Print.error("You might want to try your luck at Lucky Bucky's, but I don't want to try my luck with someone who doesn't have enough money for this option!");
+            if(Stats.money<169)
+                Print.error("Free healthcare is injurious to our health.");
             else {
                 Print.textln("Okay!...Let's make this aqap..as quick as possible..");
                 Thread.sleep(1000);
-                Stats.money -= 300;
+                Stats.money -= 200;
                 emergency();
             }
         }
         else if(choice==3){
             Thread.sleep(1500);
-            if(Stats.money<100)
-                Print.error("You might want to try your luck at Lucky Bucky's, but I don't want to try my luck with someone who doesn't have enough money for this option!");
+            if(Stats.money<50)
+                Print.error("Blabbering with our docs isn't free, dumbo!");
             else {
                 Print.textln("GET AWAY PEOPLE! Depressed person on the wayyyyyy...vroooommmmmmm");
                 Thread.sleep(2000);
@@ -70,7 +70,7 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
             Thread.sleep(1500);
             Print.textln("There are others who are waiting to die...");
             Thread.sleep(1500);
-            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this old receptionist.");
+            Print.textln("Enter what is asked correctly. Don't cause any more trouble for this fat receptionist.");
             options();
         }
     }
@@ -97,11 +97,11 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
     private static void emergency() throws InterruptedException, IOException {
         System.out.println();
         if(Stats.HP<10){
-            Print.textln("Hope: ALL CLEAR! Mooooove awaayyy...loukkaantunut person rushing in....");
+            Print.textln("Hope: ALL CLEAR! Mooooove awaayyy...broke person rushing in....");
             Thread.sleep(1000);
-            Print.text("Corresponder 101... Person lost his mind in car attack...bleeding like a volcanic eruption...repeat...injury level 9999\nrushing OPD 14");
+            Print.text("Corresponder 101... Person lost his brains in a car attack...bleeding like a volcanic eruption...repeat...injury level 9999\nrushing OPD 14");
             Thread.sleep(2000);
-            Print.textln("Surgeon: Sister, pass on the scissors plesse...pliars...grass choppers...lawn mower...75gsm sand paper...aanndd...\n We're done! Operation successful!");
+            Print.textln("Surgeon: Nurse, pass on the scissors plesse...pliars...grass choppers...lawn mower...75gsm sand paper...aanndd...\n We're done! Operation successful!");
             Thread.sleep(3000);
             Print.text("Respond: ");
             Input.String();
@@ -117,7 +117,7 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
             Input.String();
             Thread.sleep(700);
             Print.textln("Hope: Okay!...here you go! I've stiched all your problems ;)");
-            Thread.sleep(1000);
+            Thread.sleep(1500);
             Stats.HP=100;
             options();
         }

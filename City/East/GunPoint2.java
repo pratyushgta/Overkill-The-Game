@@ -9,7 +9,7 @@ import java.util.Random;
 public class GunPoint2 //rip-off of Ammu Nation 
 {
     public static void exec1() throws InterruptedException, IOException { //First time main run method of ropyaH qach
-        Scene.make("Gun Point","The OG gun shop.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
+        Scene.make("Gun Point","The OMG gun shop.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
         System.out.println();
         Print.textln("Albert:\nWelcome back homie....\nWhich type of weapon are you lookin' for, today?");

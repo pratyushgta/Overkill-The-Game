@@ -1,15 +1,15 @@
 #BlueJ package file
-dependency1.from=PartyIslandMetro
-dependency1.to=SouthZone
+dependency1.from=SouthZone
+dependency1.to=LuckyBucky
 dependency1.type=UsesDependency
 dependency2.from=SouthZone
-dependency2.to=LuckyBucky
+dependency2.to=GeorgesGrubs
 dependency2.type=UsesDependency
 dependency3.from=SouthZone
-dependency3.to=GeorgesGrubs
+dependency3.to=PartyIslandMetro
 dependency3.type=UsesDependency
-dependency4.from=SouthZone
-dependency4.to=PartyIslandMetro
+dependency4.from=PartyIslandMetro
+dependency4.to=SouthZone
 dependency4.type=UsesDependency
 objectbench.height=93
 objectbench.width=760
