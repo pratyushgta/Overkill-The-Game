@@ -18,7 +18,7 @@ public class LuckyBucky {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500 for each correct guess)","Go back"});
+        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500 for each correct guess)","Slots","Go back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -48,6 +48,10 @@ public class LuckyBucky {
             }
         }
         else if(choice==3){
+            System.out.println("SLOTS");
+            slots();
+        }
+        else if(choice==4){
         }
         else{
             Print.textln("You... naughty, naughty bi... person!");
@@ -276,6 +280,45 @@ public class LuckyBucky {
             Print.textln("looks like you are going to have to go back empty handed, haha!");
         }
         options();
+    }
+
+    private static void slots() throws InterruptedException, IOException {
+        Random rand=new Random();
+        System.out.println();
+        Print.textln("Billy: Welcome to Slots Machine!!");
+        Thread.sleep(1000);
+        Print.textln("Billy: Ready to try your luck? [y/n]");
+        Print.textln("Response: ");
+        String resp=Input.String();
+        Thread.sleep(1000);
+        if(resp.equalsIgnoreCase("y"))
+        {
+            Print.textln("Billy: Okie dokie!");
+            Thread.sleep(1000);
+            Print.textln("Spinning the slots......");
+            Thread.sleep(1000);
+            int num1=rand.nextInt(7);
+            Print.text("NUMBER 1: "+num1+"\t");
+            int num2=rand.nextInt(7);
+            Print.text("NUMBER 2: "+num2+"\t");
+            int num3=rand.nextInt(7);
+            Print.textln("NUMBER 3: "+num3+"\t");
+            if(num1==num2 || num2==num3 || num3==num1)
+            {
+                Print.textln("HALF WIN");
+            }
+            else if(num1==num2 && num2==num3)
+            {
+                Print.textln("\nWINNER!");
+            }
+            else
+            {
+                Print.textln("\nLOST");
+            }
+            Print.textln("Press any key to continue");
+            Input.String();
+            options();
+        }
     }
 
     private static void guess(String str, int num, int prize) throws InterruptedException {
