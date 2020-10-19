@@ -26,7 +26,7 @@ public class Safehouse {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Quit to Main Menu","Exit Safehouse"});
+        Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Exit Safehouse","Quit to Main Menu"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -41,7 +41,7 @@ public class Safehouse {
             Thread.sleep(1500);
             savegame();
         }
-        else if(choice==4){
+        else if(choice==5){
             Print.textln("All unsaved changes will be lost.");
             Scene.choice(new String[]{"Save and Quit","Quit without saving","Go Back"});
             choice=Input.Int();
@@ -56,7 +56,7 @@ public class Safehouse {
             else
                 options();
         }
-        else if(choice==5){
+        else if(choice==4){
             NorthZone.main(new String[]{});
         }
         else{
