@@ -5,8 +5,9 @@ import java.io.IOException;
 import City.North.*;
 /**
  * 
- * This class contains all the necessary methods and story for the Intro/ Chapter 1 Missions.
- * M_<name>: Mission <name> || SM_<name>: Side Mission <name> 
+ * This is a defunct class, earlier used for Intro/ Chapter 1 Missions in Development Builds v0.0.7 & v0.0.8
+ * Temporary class for reference. Will be removed later. 
+ * Last Updated: Developement Build v.0.0.9 | December Update 
  */
 public class Introduction {
     public static void main(String[] args) throws IOException, InterruptedException  {
@@ -25,7 +26,7 @@ public class Introduction {
         Thread.sleep(3000);
         Print.textln("Loaded 99%. Taking time to load that 1% just to frustrate you...");
         Thread.sleep(4200);
-        M_Welcome.main(new String[]{}); 
+        //M_Welcome.main(new String[]{}); 
     }
 }
  

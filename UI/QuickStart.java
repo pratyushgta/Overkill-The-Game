@@ -1,4 +1,4 @@
-package Assets;
+package UI;
 import Overkill_Engine.*;
 import Backend.Stats;
 import Minigames.*;
@@ -14,7 +14,7 @@ import City.West.*;
  * Click on RunTemp class to play the game.
  * Since the game is still in development, various features might not function as intended.
  */
-public class OKTown{
+public class QuickStart{
     private static void options() throws InterruptedException, IOException { //First time main run method of LuckyBucky
         Scene.make("THE FABULOUS OK TOWN","The Valley of Death Welcomes You!",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);

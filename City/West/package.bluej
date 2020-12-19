@@ -1,18 +1,18 @@
 #BlueJ package file
-dependency1.from=WestZone
-dependency1.to=Fishing
+dependency1.from=WestBankMetro
+dependency1.to=WestZone
 dependency1.type=UsesDependency
-dependency2.from=WestZone
+dependency2.from=Fishing
 dependency2.to=CrustyCrabs
 dependency2.type=UsesDependency
 dependency3.from=WestZone
-dependency3.to=WestBankMetro
+dependency3.to=Fishing
 dependency3.type=UsesDependency
-dependency4.from=WestBankMetro
-dependency4.to=WestZone
+dependency4.from=WestZone
+dependency4.to=CrustyCrabs
 dependency4.type=UsesDependency
-dependency5.from=Fishing
-dependency5.to=CrustyCrabs
+dependency5.from=WestZone
+dependency5.to=WestBankMetro
 dependency5.type=UsesDependency
 objectbench.height=96
 objectbench.width=1342

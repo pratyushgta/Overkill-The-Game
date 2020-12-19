@@ -10,7 +10,7 @@ import java.io.*;
 
 /**
  * Not the main class of the game. If you are a user, WTF are you doing here? Go to the Run class and do as instructed pls.
- * Version: 0.0.7 Developement Build: September Update 
+ * Version: 0.0.9 Developement Build: Winter Update 
  */
 public class mainMenu {
     public static void main(String[] args) throws IOException, InterruptedException  { 
@@ -46,7 +46,7 @@ public class mainMenu {
             if(Save.SaveExists())
                 Save.delete();
             Save.make();
-            Introduction.main(new String[]{});
+            LoadGame.main(new String[]{});
         }
         else if(choice==2) {
             if (Save.SaveExists()) {
@@ -59,11 +59,11 @@ public class mainMenu {
                 Print.error("Save file does not exist or has been tampered with. Starting a new game instead");
                 Thread.sleep(3000);
                 Save.make();
-                Introduction.main(new String[]{});
+                LoadGame.main(new String[]{});
             }
         }
         else if(choice==4) {
-            OKTown.main(new String[]{});
+            QuickStart.main(new String[]{});
         }
         else{
             mainMenu.main(new String[]{});
@@ -100,8 +100,8 @@ public class mainMenu {
             settings();
         }
         else if(choice==2){
-            Print.header("Game Version: October Update 1 | v0.0.8 Development Build");
-            Print.header("Click 'Update' under Teamwork settings to check for latest updates!");  
+            Print.header("Game Version: Winter Update | v0.0.9 Development Build");
+            Print.header("Click 'Update' under Teamwork settings of BlueJ to check for latest updates!");  
             Thread.sleep(5000);
             settings();
         }

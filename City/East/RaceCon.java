@@ -21,7 +21,7 @@ public class RaceCon {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"The Ruthless Gamble (Entry Fee: $50)","Back in the Race(Cost: $150; Win: $600)","Go back"});
+        Scene.choice(new String[]{"The Ruthless Gamble (Entry Fee: $50)",/*"Back in the Race(Cost: $150; Win: $600)",*/"Go back"});
         Print.textln("Response:");
         int choice=Input.Int();
         if(choice==1){
@@ -43,19 +43,6 @@ public class RaceCon {
             }
         }
         else if(choice==2){
-            if(Stats.money<150){
-                Print.textln("You're not gonna get that horse for free, come back when you have enough, aight?");
-            }
-            else {
-                Print.textln("Buckle Up!!");
-                Thread.sleep(2200);
-                Print.textln("Put on your cowboy hats and leather boots, because we're gonna rock the dance floor!");
-                Thread.sleep(2000);
-                Stats.money -= 150;
-                race();
-            }
-        }
-        else if(choice==3){
         }
         else{
             Print.textln("You thought bug-finding was this easy?");
@@ -177,18 +164,6 @@ public class RaceCon {
         br.readLine();
         options();
         return false;
-    }
-
-    private static void race() throws InterruptedException, IOException {
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        Print.textln("CowBoy Codey:\nI fear you aren't trained to ride a horse, yet.");
-        Print.textln("Go ride a Unicorn, kid....");
-        Print.textln("Respond: ");
-        br.readLine();
-        Thread.sleep(1000);
-        Print.textln("**This Game mode is still Under Developement. Check back later ;)");
-        Thread.sleep(2500);
-        options();
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
