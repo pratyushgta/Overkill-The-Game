@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Stats {
     public static String name="default_player";
     public static double HP=100.0d;
-    public static double money=500.0d;
+    public static double money=500.0d; //$500 only for developent purpose. Default value should be $100/$50
     public static boolean wanted=false;
     public static String weapon="Fists";
     public static int[] time={12,0};

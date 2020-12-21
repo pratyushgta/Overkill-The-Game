@@ -5,8 +5,9 @@ import java.io.IOException;
 import City.North.*;
 /**
  * 
- * This class contains all the necessary methods and story for the Intro/ Chapter 1 Missions.
- * M_<name>: Mission <name> || SM_<name>: Side Mission <name> 
+ * This class contains the cool transition which appears before a new game begins.
+ * In this text animation, the game's name is being printed in a star pattern.
+ * This code has been contributed by GeeksForGeeks: https://www.geeksforgeeks.org/print-the-alphabets-a-to-z-in-star-pattern/
  */
 public class LoadGame {
 

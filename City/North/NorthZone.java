@@ -10,7 +10,7 @@ public class NorthZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
         Scene.clear();
         Print.header("NORTH ZONE","*");
-        Scene.choice(new String[]{"Safehouse","Gun Point","NorthZone Metro"});
+        Scene.choice(new String[]{"Safehouse","Gun Point","Netizens C@fe","NorthZone Metro"});
         int choice = Input.Int();
         if(choice==1){
             Safehouse.main(new String[]{});
@@ -21,6 +21,10 @@ public class NorthZone {
             main(new String[]{});
         }
         else if(choice==3){
+            NetizensCafe.main(new String[]{});
+            main(new String[]{});
+        }
+        else if(choice==4){
             NorthMetro.main(new String[]{});
             main(new String[]{});
         }

@@ -89,7 +89,7 @@ public class Safehouse {
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
         Print.lineln("-",20);
-        Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour Hp: "+Stats.HP+"\nGF: None..just like you don't have one in real life\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
+        Print.textln("You have: "+Num.round(Stats.money,2)+"\nYour HP: "+Stats.HP+"\nGF: None..just like you don't have one in real life\nCurrent Weapon: "+Stats.weapon+"\nTime: "+TimeModule.printableTime(Stats.time));
         if(!Stats.wanted){
             Print.textln("Wanted Status: You are not on the wanted list");
         }
@@ -98,15 +98,16 @@ public class Safehouse {
             Print.textln("Wanted Status: The cops are looking for you in every nook and corner...");
         }
         Print.lineln("-",20);
-        Print.textln("Press any key when you are done mesmerizing the stats..");
+        Print.textln("Press any key when you are done mesmerizing the facts..");
         br.readLine();
         options();
     }
 
     private static void savegame() throws InterruptedException, IOException {
         Stats.writeToSave();
-        Print.textln("Your progress has been saved");
-        Thread.sleep(1000);
+        Print.textln("Your progress has been saved! Enjoy!");
+        Thread.sleep(1500);
+        options();
     }
 
     private static void introduction() throws IOException, InterruptedException {
