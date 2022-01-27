@@ -1,6 +1,0 @@
-default_player
-100.0
-495.0
-Fists
-false
-12:00
