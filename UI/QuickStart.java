@@ -11,6 +11,7 @@ import City.West.*;
 
 /**
  * This class contains methods to allow you to explore the OKTown.
+ * TEMPORARY CLASS for DEV. Purpose
  * Click on RunTemp class to play the game.
  * Since the game is still in development, various features might not function as intended.
  */

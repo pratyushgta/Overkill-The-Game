@@ -14,7 +14,7 @@ public class Safehouse {
         Scene.clear();
         Scene.make("Safehouse","Home-not-so-sweet home.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
-        if(Tags.M1==true){
+        if(Tags.M1){
             introduction();
         }
         else{
@@ -39,6 +39,7 @@ public class Safehouse {
         }
         else if(choice==3){
             Thread.sleep(1500);
+
             savegame();
         }
         else if(choice==5){
@@ -46,7 +47,7 @@ public class Safehouse {
             Scene.choice(new String[]{"Save and Quit","Quit without saving","Go Back"});
             choice=Input.Int();
             if(choice==1){
-                if(Stats.wanted==true)
+                if(Stats.wanted)
                     Stats.wanted=false;
                 savegame();
                 mainMenu.main(new String[]{});
@@ -66,7 +67,7 @@ public class Safehouse {
     }
 
     private static void rest() throws InterruptedException, IOException {
-        if(Stats.wanted==true)
+        if(Stats.wanted)
             Stats.wanted=false;
         InputStreamReader isr=new InputStreamReader(System.in);
         BufferedReader br=new BufferedReader(isr);
