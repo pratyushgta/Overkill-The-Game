@@ -27,7 +27,7 @@ public class Safehouse {
 
     private static void options() throws IOException, InterruptedException {
         Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Exit Safehouse","Quit to Main Menu"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);

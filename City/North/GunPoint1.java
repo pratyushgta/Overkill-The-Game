@@ -25,7 +25,7 @@ public class GunPoint1 //rip-off of Ammu Nation
         Print.lineln("-",21);
         Print.text("    CATALOGUE");
         Scene.choice(new String[]{"Melee & Handguns","Assault Rifles","Machine Guns","Snipers & Shotguns","Exit"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){      
             Thread.sleep(1500);
@@ -107,7 +107,7 @@ public class GunPoint1 //rip-off of Ammu Nation
                 NonLethalWeapons();
             }
             else{
-                Print.error("You don't have enough buckies to but that!");
+                Print.error("You don't have enough buckies to buy that!");
                 Thread.sleep(1000);
                 NonLethalWeapons();
             }

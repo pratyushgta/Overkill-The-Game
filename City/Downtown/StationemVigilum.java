@@ -27,7 +27,7 @@ public class StationemVigilum //Yeah...we made it super difficult for you to und
 
     private static void options() throws IOException, InterruptedException {
         Scene.choice(new String[]{"View Recent Crimes","Search Police Records","View Most Wanted","Go Back"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);

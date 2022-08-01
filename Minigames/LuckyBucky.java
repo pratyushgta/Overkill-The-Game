@@ -19,7 +19,7 @@ public class LuckyBucky {
 
     private static void options() throws IOException, InterruptedException {
         Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500 for each correct guess)","Go back"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(2200);
@@ -84,7 +84,7 @@ public class LuckyBucky {
             Print.header("You have "+turns+(turns==1?" turn":" turns")+" remaining","*");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
-            Print.textln("Response:");
+            Print.text("Response: ");
             str=Input.String();
             if(str.toLowerCase().contains("final")){
                 Thread.sleep(1500);
@@ -215,7 +215,7 @@ public class LuckyBucky {
             Print.header("\nYou have "+turns+(turns==1?" turn":" turns")+" remaining","*");
             Thread.sleep(1500);
             Print.textln("Make a guess or tell me if you wanna make a final guess!");
-            Print.textln("Response:");
+            Print.text("Response: ");
             str=Input.String();
             if(str.toLowerCase().contains("final")){
                 Thread.sleep(1500);

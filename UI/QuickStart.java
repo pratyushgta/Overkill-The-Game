@@ -23,7 +23,7 @@ public class QuickStart{
         Print.header("EXPLORE THE CITY!");
         Print.textln("Where would you like to go?");
         Scene.choice(new String[]{"Downtown","North Point","South: Party Island","East Hills","West Bank","Exit"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Downtown.main(new String[]{});

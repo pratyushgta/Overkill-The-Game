@@ -10,7 +10,8 @@ public class WestZone {
     public static void main(String[] args) throws IOException, InterruptedException  {
         Scene.clear();
         Print.header("HOVE BEACH","*");
-        Scene.choice(new String[]{"Fishing","CrustyCrab's","NorthZone Metro"});
+        Scene.choice(new String[]{"Fishing","CrustyCrab's","WestZone Metro"});
+        Print.text("Response: ");
         int choice = Input.Int();
         if(choice==1){
             Fishing.main(new String[]{});

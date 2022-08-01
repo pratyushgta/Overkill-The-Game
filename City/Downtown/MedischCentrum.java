@@ -28,7 +28,7 @@ public class MedischCentrum //Yeah...we made it super difficult for you to under
 
     private static void options() throws IOException, InterruptedException {
         Scene.choice(new String[]{"Regular Check-Up (Cost: $75; Time: 60 mins)","Emergency (Cost: $169; Time: 20 mins)","Chit-Chat with Doc(Cost: $50; Time: 30 mins","Go Back"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);

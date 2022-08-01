@@ -26,7 +26,7 @@ public class NorthMetro {
         Print.textln("Welcome to North Point Station. Where would you like to travel to?");
         Thread.sleep(1000);
         Scene.choice(new String[]{"Downtown\t\t$2","South: Party Island\t$8","East Hills\t\t$5","West Bank\t\t$5","Go Back"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);

@@ -23,7 +23,7 @@ public class NetizensCafe {
 
     private static void options() throws IOException, InterruptedException {
         /* Scene.choice(new String[]{"Rest in Peace","Player Stats","Save Game","Exit Safehouse","Quit to Main Menu"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();*/
         Print.header("SETTING UP COMPUTERS. CHECK BACK LATER!","@");
         System.out.println("\n");

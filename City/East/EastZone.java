@@ -11,6 +11,7 @@ public class EastZone {
         Scene.clear();
         Print.header("EAST HILLS","*");
         Scene.choice(new String[]{"RaceCon","GunPoint","East Hills Metro"});
+        Print.text("Response: ");
         int choice = Input.Int();
         if(choice==1){
             RaceCon.main(new String[]{});

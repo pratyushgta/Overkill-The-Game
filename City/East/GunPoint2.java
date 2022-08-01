@@ -23,7 +23,7 @@ public class GunPoint2 //rip-off of Ammu Nation
         Print.lineln("-",21);
         Print.text("    CATALOGUE");
         Scene.choice(new String[]{"Melee & Handguns","Assault Rifles","Machine Guns","Snipers & Shotguns","Exit"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);

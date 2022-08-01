@@ -93,7 +93,7 @@ public class GeorgesGrubs //restaurant 2
     private static void menu2() throws IOException, InterruptedException {
         Print.header("carte du jour","-");
         Scene.choice(new String[]{"DISH 1.2 ($x; HP: +x)","DISH 2.2 ($x; HP: +x)","DISH 3.2 ($x; HP: +x)","Burrrrrp...I'm full!"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1)
         {
@@ -147,7 +147,7 @@ public class GeorgesGrubs //restaurant 2
     private static void menu3() throws IOException, InterruptedException {
         Print.header("carte du jour","-");
         Scene.choice(new String[]{"DISH 1.3 ($x; HP: +x)","DISH 2.3 ($x; HP: +x)","DISH 3.3 ($x; HP: +x)","Oh lord! No more..."});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1)
         {

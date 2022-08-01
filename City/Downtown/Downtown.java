@@ -11,6 +11,7 @@ public class Downtown{
         Scene.clear();
         Print.header("DOWNTOWN","*");
         Scene.choice(new String[]{"Death Valley Health Center","Flippin Sheriff Station","Central Station"});
+        Print.text("Response: ");
         int choice = Input.Int();
         if(choice==1){
             MedischCentrum.main(new String[]{});

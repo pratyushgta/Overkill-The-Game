@@ -11,6 +11,7 @@ public class NorthZone {
         Scene.clear();
         Print.header("NORTH ZONE","*");
         Scene.choice(new String[]{"Safehouse","Gun Point","Netizens C@fe","NorthZone Metro"});
+        Print.text("Response: ");
         int choice = Input.Int();
         if(choice==1){
             Safehouse.main(new String[]{});

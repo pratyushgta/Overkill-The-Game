@@ -93,7 +93,7 @@ public class CrustyCrabs //restaurant 1
     private static void menu2() throws IOException, InterruptedException {
         Print.header("Today's Menu","-");
         Scene.choice(new String[]{"Fish & Chips ($6; HP: +5)","Frying Nemo ($9; HP: +8)","Fiscoteque ($14; HP: +12)","Burrrrrp...I'm full!"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1)
         {
@@ -147,7 +147,7 @@ public class CrustyCrabs //restaurant 1
     private static void menu3() throws IOException, InterruptedException {
         Print.header("Today's Menu","-");
         Scene.choice(new String[]{"Sea Weed ($4; HP: 4)","Crab-O-Nara ($7; HP:7)","Codrophenia ($11; HP: 10)","Oh lord! No more..."});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1)
         {

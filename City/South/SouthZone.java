@@ -11,6 +11,7 @@ public class SouthZone {
         Scene.clear();
         Print.header("PARTY ISLAND","*");
         Scene.choice(new String[]{"Lucky Bucky","George's Grubs Diner","Party Island Metro"});
+        Print.text("Response: ");
         int choice = Input.Int();
         if(choice==1){
             LuckyBucky.main(new String[]{});

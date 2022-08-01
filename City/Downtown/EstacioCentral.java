@@ -25,7 +25,7 @@ public class EstacioCentral {
         Print.textln("Welcome to Estacio Central. Where would you like to travel to?");
         Thread.sleep(1000);
         Scene.choice(new String[]{"North Point\t\t$2","South: Party Island\t\t$2","East Hills\t\t$2","West Bank\t\t$2","Go Back"});
-        Print.textln("Response:");
+        Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
             Thread.sleep(1500);
