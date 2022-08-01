@@ -57,6 +57,10 @@ public class Fishing //restaurant 1
         Thread.sleep(1000);
         Print.textln("Salvatore: And if you don't.....I shall killll youuuu. Think again..do you wanna continue? [y/n]");
         String ch = "";
+
+        /*
+        BUG HERE: Code 1
+         */
         while (!ch.equalsIgnoreCase("n") || !ch.equalsIgnoreCase("y")) {
             Print.text("Response: ");
             ch = Input.String();
@@ -99,7 +103,9 @@ public class Fishing //restaurant 1
                     x--;
                 }
                 break;
-
+     /*
+        BUG HERE: Code 2
+         */
             case 0:
                 while (x > 5 && x < 9) {
                     System.out.println("Enter throw distance: ");
