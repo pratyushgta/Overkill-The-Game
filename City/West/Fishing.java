@@ -56,19 +56,19 @@ public class Fishing //restaurant 1
         Input.String();
         Thread.sleep(1000);
         Print.textln("Salvatore: And if you don't.....I shall killll youuuu. Think again..do you wanna continue? [y/n]");
+        Print.text("Response: ");
         String ch = "";
+        ch = Input.String();
+        Thread.sleep(1000);
 
-        /*
-        BUG HERE: Code 1
-         */
+
         while (!ch.equalsIgnoreCase("n") || !ch.equalsIgnoreCase("y")) {
+            Print.textln("You think you're smart huh? Y or N. Y...OOORRR....N....choose between one you dumb");
             Print.text("Response: ");
             ch = Input.String();
             Thread.sleep(1000);
-
-            if (!ch.equalsIgnoreCase("n") || !ch.equalsIgnoreCase("y")) {
-                Print.textln("You think you're smart huh? Y or N. Y...OOORRR....N....choose between one you dumb");
-            }
+            if (ch.equalsIgnoreCase("n") || ch.equalsIgnoreCase("y"))
+                break;
         }
         if (ch.equalsIgnoreCase("n")) {
             Print.textln("Wise decision....you saved your buckied");
@@ -103,22 +103,10 @@ public class Fishing //restaurant 1
                     x--;
                 }
                 break;
-     /*
-        BUG HERE: Code 2
-         */
+
             case 0:
-                while (x > 5 && x < 9) {
-                    System.out.println("Enter throw distance: ");
-                    int N = Input.Int();
-                    int sr = (int) Math.sqrt(N);
-                    if (N < 50 && sr * sr == N) {
-                        System.out.println("Yay! You caught a fish!");
-                        fish++;
-                    } else {
-                        System.out.println("Oops! Missed it!");
-                    }
-                    x--;
-                }
+                 /*
+                 * CASE UNDEFINED. Define a unique way to catch fishes*/
                 break;
 
             case 2:
