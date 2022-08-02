@@ -54,7 +54,7 @@ public class LuckyBucky {
         else if(choice==4){
         }
         else{
-            Print.textln("You... naughty, naughty bi... person!");
+            Print.textln("You... naughty, naughty boi... person!");
             Thread.sleep(1500);
             Print.textln("You know this is a software after all...");
             Thread.sleep(1500);

@@ -24,14 +24,14 @@ public class GeorgesGrubs //restaurant 2
 
     private static void options() throws IOException, InterruptedException {
         Random rand = new Random();
-        int opt=rand.nextInt(2);
+        int opt=rand.nextInt(3);
         if(opt==0){
             menu1();
         }
         else if(opt==1){
             menu2();
         }
-        if(opt==2){
+        else{
             menu3();
         }
     }
