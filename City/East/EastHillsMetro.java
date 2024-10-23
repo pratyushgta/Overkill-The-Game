@@ -8,7 +8,11 @@ import City.Downtown.*;
 import City.South.*;
 import City.North.*;
 import City.West.*;
+import Overkill_Engine.AIEngine;
+
 public class EastHillsMetro {
+    private static AIEngine aiEngine = new AIEngine();
+
     private static void exec1() throws InterruptedException, IOException { 
         Scene.clear();
         Scene.make("Town Metro","Going places, together.",null,Num.round(Stats.money,2),true,Stats.HP,true,Stats.weapon,true,Stats.wanted,true,TimeModule.printableTime(Stats.time),true);
@@ -23,7 +27,7 @@ public class EastHillsMetro {
         Print.header("Beach Line",">");
         Print.textln("Welcome to East Hills Station. Where would you like to travel to?");
         Thread.sleep(1000);
-        Scene.choice(new String[]{"Downtown\t\t$2","North Point\t\t$5","South: Party Island\t\t$5","West Bank\t\t$8","Go Back"});
+        Scene.choice(new String[]{"Downtown\t\t$2","North Point\t\t$5","South: Party Island\t\t$5","West Bank\t\t$8","Go Back","AI Challenge"});
         Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
@@ -49,10 +53,25 @@ public class EastHillsMetro {
         else if(choice==5){
             EastZone.main(new String[]{});
         }
+        else if(choice==6){
+            aiChallenge();
+            options();
+        }
         else{
             Print.textln("It's a small world. There's no where else you can go other than that.");
             options();
         }
+    }
+
+    private static void aiChallenge() throws InterruptedException {
+        Print.textln("AI Challenge: " + aiEngine.generateAIChallenge());
+        Thread.sleep(2000);
+        Print.textln("NPC Behavior: " + aiEngine.simulateNPCBehavior());
+        Thread.sleep(2000);
+        Print.textln("Dynamic Event: " + aiEngine.generateDynamicEvent());
+        Thread.sleep(2000);
+        Print.textln("AI Decision: " + aiEngine.makeDecision());
+        Thread.sleep(2000);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
