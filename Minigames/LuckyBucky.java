@@ -3,8 +3,11 @@ import Overkill_Engine.*;
 import Backend.Stats;
 import java.io.IOException;
 import java.util.Random;
+import Overkill_Engine.AIEngine;
 
 public class LuckyBucky {
+    private static AIEngine aiEngine = new AIEngine();
+
     private static void exec1() throws InterruptedException, IOException { //First time main run method of LuckyBucky
         Scene.make("Lucky Bucky","Try your luck and see if you're lucky. Welcome to LUCKY BUCKY!",null,Num.round(Stats.money,2),true,Stats.HP,false,Stats.weapon,false,Stats.wanted,false,TimeModule.printableTime(Stats.time),true);
         Thread.sleep(1000);
@@ -18,7 +21,7 @@ public class LuckyBucky {
     }
 
     private static void options() throws IOException, InterruptedException {
-        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500 for each correct guess)","Go back"});
+        Scene.choice(new String[]{"Guess my number (Cost: $10; Win: $50)","Lucky Bucky Classic (Cost: $100; Win: $500 for each correct guess)","AI Challenge","Go back"});
         Print.text("Response: ");
         int choice=Input.Int();
         if(choice==1){
@@ -48,6 +51,10 @@ public class LuckyBucky {
             }
         }
         else if(choice==3){
+            aiChallenge();
+            options();
+        }
+        else if(choice==4){
         }
         else{
             Print.textln("You... naughty, naughty bi... person!");
@@ -290,6 +297,17 @@ public class LuckyBucky {
             Print.textln("Ahh hard luck! The number was "+num+", and you got it wrong!");
             Thread.sleep(1500);
         }
+    }
+
+    private static void aiChallenge() throws InterruptedException {
+        Print.textln("AI Challenge: " + aiEngine.generateAIChallenge());
+        Thread.sleep(2000);
+        Print.textln("NPC Behavior: " + aiEngine.simulateNPCBehavior());
+        Thread.sleep(2000);
+        Print.textln("Dynamic Event: " + aiEngine.generateDynamicEvent());
+        Thread.sleep(2000);
+        Print.textln("AI Decision: " + aiEngine.makeDecision());
+        Thread.sleep(2000);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
